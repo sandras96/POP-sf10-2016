@@ -36,7 +36,10 @@ namespace POP_SF_10_2016
 
                 foreach (var namestaj in Projekat.Instance.Namestaj)
                 {
+                    if(namestaj.Obrisan == false)
+                {
                     listBoxNamestaj.Items.Add(namestaj);
+                }
                
                 }
 
@@ -53,15 +56,46 @@ namespace POP_SF_10_2016
             {
                 Naziv = ""
             };
-            var namestajProzor = new NamestajWindow(noviNamestaj, NamestajWindow.Operacija.DODAVANJE);
-            namestajProzor.Show();
+            var namestajProzor = new Window1(noviNamestaj, Window1.Operacija.DODAVANJE);
+            namestajProzor.ShowDialog();
+
+            OsveziPrikaz();
         }
         
         private void IzmeniNamestaj(object sender, RoutedEventArgs e)
         {
             var selektovaniNamestaj = (Namestaj)listBoxNamestaj.SelectedItem;
-            var namestajProzor = new NamestajWindow(selektovaniNamestaj, NamestajWindow.Operacija.IZMENA);
-            namestajProzor.Show();
+            var namestajProzor = new Window1(selektovaniNamestaj, Window1.Operacija.IZMENA);
+            namestajProzor.ShowDialog();
+
+            OsveziPrikaz();
         }
+
+        private void btnObrisiNamestaj_Click(object sender, RoutedEventArgs e)
+        {
+            var izabraniNamestaj = ((Namestaj)listBoxNamestaj.SelectedItem);
+            var ListaNamestaja = Projekat.Instance.Namestaj;
+            
+            if (MessageBox.Show($"Da li ste sigurni da zelite da izbrisete: { izabraniNamestaj.Naziv}", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes){
+                foreach (var n in ListaNamestaja)
+                {
+                    Namestaj namestaj = null;
+                    foreach (var n in ListaNamestaja)
+                    {
+                        if (n.Id == izabraniNamestaj.Id)
+                        {
+                            namestaj = n;
+                        }
+                    }
+                   
+                }
+                //var namestaj = Namestaj.GetById(izabraniNamestaj.Id);
+                namestaj.Obrisan = true;
+
+                Projekat.Instance.Namestaj = ListaNamestaja;
+                OsveziPrikaz();
+            }
+        }
+        //data grid dodaj
     }
 }

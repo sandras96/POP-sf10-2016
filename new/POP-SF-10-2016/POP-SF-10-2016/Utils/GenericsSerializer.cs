@@ -42,7 +42,7 @@ namespace POP_10.Util
                 }
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

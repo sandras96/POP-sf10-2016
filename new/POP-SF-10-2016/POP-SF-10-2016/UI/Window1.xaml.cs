@@ -13,12 +13,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace POP_SF_9_2016.UI
+namespace POP_SF_10_2016.UI
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+   /* public partial class Window1 : Window
     {
 
         private Namestaj namestaj;
@@ -28,15 +28,15 @@ namespace POP_SF_9_2016.UI
             DODAVANJE,
             IZMENA
         };
-/*        public Window1()
+        public Window1()
         {
             InitializeComponent();
-        }*/
+        }
 
         public Window1(Namestaj namestaj, Operacija operacija)  //= Operacija.DODAVANJE) //u slucaju da neko ne navede da li je dodavanje ili izmena, bice dodavanje
         {
             InitializeComponent();
-            InicijalizujVrednost(namestaj, operacija);
+            InicijalizujVrednost(namestaj, operacija); 
         }
 
         private void InicijalizujVrednost(Namestaj namestaj, Operacija operacija)
@@ -74,8 +74,8 @@ namespace POP_SF_9_2016.UI
                 case Operacija.DODAVANJE:
                     var noviNamestaj = new Namestaj()
                     {
-                        Id = postojeciNamestaj.Count + 1
-                        Naziv = tbNaziv.Text
+                        Id = postojeciNamestaj.Count + 1;
+                        Naziv = tbNaziv.Text;
                         TipNamestaja = tipNamestajaId;
                     };
                     postojeciNamestaj.Add(noviNamestaj);
@@ -105,5 +105,5 @@ namespace POP_SF_9_2016.UI
             this.Close();
         }
 
-    }
+    }*/
 }

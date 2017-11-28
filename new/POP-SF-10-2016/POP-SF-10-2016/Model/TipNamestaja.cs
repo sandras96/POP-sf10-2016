@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,28 +8,55 @@ using System.Threading.Tasks;
 namespace POP_10.Model
 {
     [Serializable]
-    public class int TipNamestaja
+    public class TipNamestaja : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string Naziv { get; set; }
 
-        public bool Obrisan { get; set; }
+        private int id;
 
-        override base.ToString()
+        public int Id
         {
-            return Naziv;
+            get { return id; }
+            set { id = value; OnPropertyChanged("Id"); }
         }
 
-        public static TipNamestaja GetById(int Id)
+        private bool obrisan;
+
+        public bool Obrisan
         {
-            foreach (var tipN in Projekat.Instance.TipoviNamestaja)
+            get { return obrisan; }
+            set { obrisan = value; OnPropertyChanged("Obrisan"); }
+        }
+
+        private string naziv;
+
+        public string Naziv
+        {
+            get { return naziv; }
+            set { naziv = value; OnPropertyChanged("Naziv"); }
+        }
+
+
+        public static TipNamestaja GetById(int id)
+        {
+            foreach (var tipNamestaja in Projekat.Instance.tipNam)
             {
-                if(tipN.Id== Id)
+                if (tipNamestaja.Id == id)
                 {
-                    return tipN;
-                }
-            }
-            return null;
+                    return tipNamestaja;
+                } 
         }
+        return null;
+    }
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            } 
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -8,19 +8,16 @@ namespace POP_10.Model
 {
     [Serializable]
     public enum Tipkorisnika {
-
-        Administrator,
-        Prodavac
-
+    Administrator,
+    prodavac
     }
     
     public class Korisnik
-    {   public int Id { get; set; }
+    {   public int id { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string KorisnickoIme { get; set; }
-        public string Lozinka { get; set; }
-        public Tipkorisnika TipKorisnika { get; set; }
+        public string Sifra { get; set; }
         public bool Obrisan { get; set; }
     }
 }

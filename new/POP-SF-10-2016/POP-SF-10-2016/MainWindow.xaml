@@ -5,20 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="700">
-    <Grid Margin="0,-219,-252,0">
-        
+        Title="Login" Height="300" Width="400">
+    <Grid Margin="0,-28,-8,-4">
         <Grid.RowDefinitions>
-            <RowDefinition Height="142*"/>
-            <RowDefinition Height="63*"/>
+            <RowDefinition Height="91*"/>
+            <RowDefinition Height="92*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="72*"/>
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="0" Name="listBoxNamestaj"></ListBox>
-        <Button Grid.Row="1" Content="Dodaj" Width="Auto" Height="40" FontSize="10" Margin="24,35,583,35"/>
-        <Button Grid.Row="2" Content="Izmeni" Width="Auto" Height="40" FontSize="10" Margin="267,35,331,35"/>
-        <Button Grid.Row="2" Content="Obrisi" Width="Auto" Height="40" FontSize="10" Margin="142,35,583,35"/>
-      
-
-
-
+        <Label Content="Korisnicko ime:" HorizontalAlignment="Left" Height="25" Margin="10,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="93"/>
+        <TextBox Name="tbKI" HorizontalAlignment="Left" Height="27" Margin="126,12,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
+        <Label Content="Lozinka:" HorizontalAlignment="Left" Height="25" Margin="10,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="93"/>
+        <TextBox Name="tbLoz"  HorizontalAlignment="Left" Height="27" Margin="126,56,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
+        <Label Content="Tip korisnika:" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="84"/>
+        <ComboBox Name="cbTipKorisnika" HorizontalAlignment="Left" Height="25" Margin="126,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="177"/>
+        <Label Content="Dobro dosli u salon namestaja!" HorizontalAlignment="Left" Height="27" Margin="107,37,0,0" VerticalAlignment="Top" Width="177"/>
+        <Label Content="Molimo vas da unesete svoje podatke." HorizontalAlignment="Left" Height="31" Margin="94,64,0,0" VerticalAlignment="Top" Width="209" Grid.RowSpan="2"/>
+        <Button Content="Potvrdi" HorizontalAlignment="Left" Height="25" Margin="30,27,0,0" Grid.Row="3" VerticalAlignment="Top" Width="104" Click="Potvrdi"/>
+        <Button Content="Izlaz" HorizontalAlignment="Left" Height="25" Margin="253,27,0,0" Grid.Row="3" VerticalAlignment="Top" Width="104" Click="Izlaz"/>
     </Grid>
 </Window>

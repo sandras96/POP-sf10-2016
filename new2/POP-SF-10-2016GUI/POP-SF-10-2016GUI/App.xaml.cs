@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace POP_SF_10_2016
+namespace POP_SF_10_2016GUI
 {
     /// <summary>
     /// Interaction logic for App.xaml

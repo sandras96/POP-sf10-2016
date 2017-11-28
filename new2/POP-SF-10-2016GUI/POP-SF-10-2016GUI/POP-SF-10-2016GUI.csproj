@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{979D610E-4EA8-4A07-A9A9-4C23B56F7415}</ProjectGuid>
+    <ProjectGuid>{B19FCE3D-D863-4E71-BB63-5172C109B505}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>POP_SF_10_2016</RootNamespace>
-    <AssemblyName>POP-SF-10-2016</AssemblyName>
+    <RootNamespace>POP_SF_10_2016GUI</RootNamespace>
+    <AssemblyName>POP-SF-10-2016GUI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,19 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UI\GlavniProzor.xaml.cs">
-      <DependentUpon>GlavniProzor.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\NamestajDodavanjeIzmena.xaml.cs">
-      <DependentUpon>NamestajDodavanjeIzmena.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\NamestajWindow.xaml.cs">
-      <DependentUpon>NamestajWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Utils\GenericsSerializer.cs" />
+    <Compile Include="Util\GenericsSerializer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,22 +67,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UI\GlavniProzor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\NamestajDodavanjeIzmena.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\NamestajWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Window1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Akcija.cs" />
@@ -131,13 +103,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\korisnik.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\namestaj.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\tipNamestaja.xml" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

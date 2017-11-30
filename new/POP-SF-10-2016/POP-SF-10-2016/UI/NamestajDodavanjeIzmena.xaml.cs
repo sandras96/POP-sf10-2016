@@ -23,6 +23,7 @@ namespace POP_SF_10_2016.UI
     {
         private Namestaj namestaj;
         private Operacija operacija;
+
         public enum Operacija
         {
             DODAVANJE,
@@ -30,38 +31,24 @@ namespace POP_SF_10_2016.UI
         };
 
 
-        public NamestajDodavanjeIzmena(Namestaj noviNamestaj, Operacija operacija)
+        public NamestajDodavanjeIzmena(Namestaj namestaj, Operacija operacija)
         {
             InitializeComponent();
-            /* this.namestaj = noviNamestaj;
-             cbTipNamestaja.ItemsSource = Projekat.Instance.tipNam;
-             this.operacija = operacija;
-             tbNaziv.DataContext = namestaj;
-             cbTipNamestaja.DataContext = namestaj;
-             foreach (var tn in Projekat.Instance.tipNam)
-             {
-                 cbTipNamestaja.Items.Add(tn);
-                 cbTipNamestaja.SelectedIndex = 0;
-             }*/
-
-            InitializeComponent();
-            this.namestaj = noviNamestaj;
-            cbTipNamestaja.ItemsSource = Projekat.Instance.tipNam;
+            this.namestaj =  namestaj;
             this.operacija = operacija;
+            cbTipNID.ItemsSource = Projekat.Instance.tipNam;
+
             tbNaziv.DataContext = namestaj;
-            cbTipNamestaja.DataContext = namestaj;
-            foreach (var tn in Projekat.Instance.tipNam)
-            {
-                cbTipNamestaja.Items.Add(tn);
-                cbTipNamestaja.SelectedIndex = 0;
-            }
+            tbCena.DataContext = namestaj;
+            tbKolicina.DataContext = namestaj;
+            cbTipNID.DataContext = namestaj;
         }
 
         private void Ponisti(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-        private void SacuvajNamestaj(object sender, RoutedEventArgs e)
+        private void Potvrdi(object sender, RoutedEventArgs e)
         {
             var postojeciNamestaj = Projekat.Instance.namestaj;
 
@@ -74,6 +61,7 @@ namespace POP_SF_10_2016.UI
                     postojeciNamestaj.Add(namestaj);
 
                     break;
+
                 case Operacija.IZMENA:
                     foreach (var n in postojeciNamestaj)
                     {
@@ -82,7 +70,8 @@ namespace POP_SF_10_2016.UI
                             n.Naziv = namestaj.Naziv;
                             n.Kolicina = namestaj.Kolicina;
                             n.JedinicnaCena = namestaj.JedinicnaCena;
-                            n.TipN = namestaj.TipN;
+                            n.TipNID = namestaj.TipNID;
+                            n.TipNamestaja = namestaj.TipNamestaja;
                             break;
                         }
                     }
@@ -92,7 +81,7 @@ namespace POP_SF_10_2016.UI
             this.Close();
         }
 
-        private static int NoviIDzaNamestaj()
+       /* private static int NoviIDzaNamestaj()
         {
             int j = 0;
             foreach (var namestaj in Projekat.Instance.namestaj)
@@ -102,7 +91,7 @@ namespace POP_SF_10_2016.UI
 
             }
             return j + 1;
-        }
+        }*/
 
     }
 }

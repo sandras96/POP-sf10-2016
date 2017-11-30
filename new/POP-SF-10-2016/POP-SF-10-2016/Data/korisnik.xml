@@ -7,6 +7,13 @@
     <KorisnickoIme>a</KorisnickoIme>
     <Lozinka>a</Lozinka>
     <TipKorisnika>Administrator</TipKorisnika>
-    <Obrisan>false</Obrisan>
+  </Korisnik>
+  <Korisnik>
+    <Id>2</Id>
+    <Ime />
+    <Prezime />
+    <KorisnickoIme />
+    <Lozinka />
+    <TipKorisnika>Prodavac</TipKorisnika>
   </Korisnik>
 </ArrayOfKorisnik>

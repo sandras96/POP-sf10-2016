@@ -2,6 +2,7 @@
 using POP_10.Util;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,13 +23,26 @@ namespace POP_SF_10_2016.UI
     /// </summary>
     public partial class NamestajWindow : Window
     {
+        ICollectionView view;
+
+        public Namestaj SelektovaniNamestaj { get; set; }
+
         public NamestajWindow()
         {
             InitializeComponent();
 
-            dgNamestaj.ItemsSource = Projekat.Instance.namestaj;
+            view = CollectionViewSource.GetDefaultView(Projekat.Instance.namestaj);
+            view.Filter = Filter;
+
+            dgNamestaj.ItemsSource = view;
             dgNamestaj.IsSynchronizedWithCurrentItem = true;
+            dgNamestaj.DataContext = this;
         }
+        private bool Filter(object obj)
+        {
+            return ((Namestaj)obj).Obrisan == false;
+        }
+
         public void Ponisti(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -40,35 +54,39 @@ namespace POP_SF_10_2016.UI
             {
                 Naziv = ""
             };
-            var namestajProzor = new NamestajDodavanjeIzmena(noviNamestaj, Operacija.DODAVANJE);
-            namestajProzor.ShowDialog();
+            var ndi = new NamestajDodavanjeIzmena(noviNamestaj, NamestajDodavanjeIzmena.Operacija.DODAVANJE);
+            ndi.ShowDialog();
         }
 
         public void Izmena(object sender, RoutedEventArgs e)
         {
             var selektovaniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
-            var namestajProzor = new NamestajDodavanjeIzmena(selektovaniNamestaj, Operacija.IZMENA);
-            namestajProzor.ShowDialog();
+            var ndi = new NamestajDodavanjeIzmena(selektovaniNamestaj, NamestajDodavanjeIzmena.Operacija.IZMENA);
+            ndi.ShowDialog();
+           
         }
 
         public void Brisanje(object sender, RoutedEventArgs e)
         {
-            var staraListaN = Projekat.Instance.namestaj;
-            var nam = (Namestaj)dgNamestaj.SelectedItem;
+            var listaNamestaja = Projekat.Instance.namestaj;
 
-            if(MessageBox.Show($"Da li ste sigurni da zelite da obrisete {nam.Naziv}?", "Brisanje", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete{SelektovaniNamestaj.Naziv}?", "Brisanje", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                foreach (var n in staraListaN)
+                foreach (var nam in listaNamestaja)
                 {
-                    if(n.Id == nam.Id)
+                    if (nam.Id == SelektovaniNamestaj.Id)
                     {
-                        n.Obrisan = true;
+                        nam.Obrisan = true;
+                        view.Filter = Filter;
                         break;
                     }
                 }
+             GenericsSerializer.Serialize("namestaj.xml", Projekat.Instance.namestaj);
 
             }
-            GenericsSerializer.Serialize("namestaj.xml", Projekat.Instance.namestaj);
         }
+
     }
-}
+    
+    }
+

@@ -2,11 +2,11 @@
 <ArrayOfNamestaj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Namestaj>
     <akcija>0</akcija>
-    <Id>1</Id>
-    <Naziv>Sofa</Naziv>
-    <JedinicnaCena>63</JedinicnaCena>
-    <Kolicina>2</Kolicina>
+    <Id>6</Id>
+    <Naziv>blabla</Naziv>
+    <JedinicnaCena>99</JedinicnaCena>
+    <Kolicina>8</Kolicina>
     <Obrisan>false</Obrisan>
-    <TipN>1</TipN>
+    <TipNID>0</TipNID>
   </Namestaj>
 </ArrayOfNamestaj>

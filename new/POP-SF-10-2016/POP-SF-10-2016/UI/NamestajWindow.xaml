@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="Namestaj" Height="300" Width="300">
-    <Grid>
+        Title="Namestaj" Height="300" Width="572">
+    <Grid Margin="0,0,0,-2">
 
-        <DataGrid AutoGenerateColumns="True" Name="dgNamestaj" HorizontalAlignment="Left" Height="222" VerticalAlignment="Top" Width="292"/>
-        <Button Content="Dodavanje" HorizontalAlignment="Left" Height="32" Margin="0,227,0,0" Click="Dodavanje" VerticalAlignment="Top" Width="67"/>
-        <Button Content="Izmena" Click="Izmena" HorizontalAlignment="Left" Height="32" Margin="75,227,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button Content="Brisanje" Click="Brisanje" HorizontalAlignment="Left" Height="32" Margin="150,227,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="2.1,1.556"/>
-        <Button Content="Ponisti" Click="Ponisti" HorizontalAlignment="Left" Height="32" Margin="225,227,0,0" VerticalAlignment="Top" Width="67"/>
+
+        <DataGrid AutoGenerateColumns="True" Name="dgNamestaj" Height="222" VerticalAlignment="Top" >
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Naziv" Width="*" Binding="{Binding Naziv}"/>
+                <DataGridTextColumn Header="Tip namestaja" Width="*" Binding="{Binding TipNamestaja}"/>
+                <DataGridTextColumn Header="Cena" Width="100" Binding="{Binding JedinicnaCena}"/>
+                <DataGridTextColumn Header="Kolicina" Width="50" Binding="{Binding KolicinaUMagacinu}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Dodavanje" HorizontalAlignment="Left" Height="32" Margin="60,229,0,0" Click="Dodavanje" VerticalAlignment="Top" Width="66"/>
+        <Button Content="Izmena" Click="Izmena" HorizontalAlignment="Left" Height="32" Margin="327,227,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button Content="Brisanje" Click="Brisanje" HorizontalAlignment="Left" Height="32" Margin="194,229,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="2.1,1.556"/>
+        <Button Content="Ponisti" Click="Ponisti" HorizontalAlignment="Left" Height="32" Margin="459,227,0,0" VerticalAlignment="Top" Width="67"/>
 
     </Grid>
 </Window>

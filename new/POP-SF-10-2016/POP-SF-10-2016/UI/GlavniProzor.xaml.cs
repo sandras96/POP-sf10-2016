@@ -20,33 +20,58 @@ namespace POP_SF_10_2016.UI
     /// </summary>
     public partial class GlavniProzor : Window
     {
-        public GlavniProzor(Tipkorisnika tipKorisnika)
+        public GlavniProzor()
         {
             InitializeComponent();
+
+         //   OsveziPrikaz(tipKorisnika);
+            //listBox.SelectedIndex = 0;
         }
 
-        private void btnNamestaj(object sender, RoutedEventArgs e)
+     /*   private void OsveziPrikaz(TipKorisnika tip)
         {
-            NamestajWindow nw = new NamestajWindow();
-            nw.ShowDialog();
-        }
+            if (tip == TipKorisnika.Administrator)
+            {
+                listBox.Items.Clear();
+                listBox.Items.Add("Namestaj");
+                listBox.Items.Add("Tip namestaja");
+                listBox.Items.Add("Korisnici");
+                listBox.Items.Add("Prodaja namestaja");
 
-       /* private void btnProdajaNamestaja(object sender, RoutedEventArgs e)
-        {
-            ProdajaNamestajaWindow pn = new ProdajaNamestajaWindow();
-            pn.ShowDialog();
+            }else
+            {
+                listBox.Items.Clear();
+                listBox.Items.Add("Prodaja namestaja");
+            }
         }
-
-        private void btnAkcija(object sender, RoutedEventArgs e)
+        
+        private void Potvrdi(object sender, RoutedEventArgs e)
         {
-            AkcijaWindow aw = new AkcijaWindow();
-            aw.ShowDialog();
+            var selectedItem = listBox.SelectedItem;
+            switch (selectedItem)
+            {
+                case "Namestaj":
+                    var namestajWindow = new MainWindow1(MainWindow1.Window.Namestaj);
+                    namestajWindow.ShowDialog();
+                    break;
+                case "Tip namestaja":
+                    var tipWindow = new MainWindow1(MainWindow1.Window.TipNamestaja);
+                    tipWindow.ShowDialog();
+                    break;
+                case "Korisnici":
+                    var korisniciWindow = new MainWindow1(MainWindow1.Window.Korisnici);
+                    korisniciWindow.ShowDialog();
+                    break;
+                case "Prodaja namestaja":
+                    var prodajaWindow = new MainWindow1(MainWindow1.Window.ProdajaNamestaja);
+                    prodajaWindow.ShowDialog();
+                    break;
+            }
         }
-
-        private void btnKorisnici(object sender, RoutedEventArgs e)
+        private void Izlaz(object sender, RoutedEventArgs e)
         {
-            KorisniciWindow kw = new KorisniciWindow();
-            kw.ShowDialog();
-        }*/
+            this.Close();
+        }
+        */
     }
 }

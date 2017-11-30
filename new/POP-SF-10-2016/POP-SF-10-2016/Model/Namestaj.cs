@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,8 @@ namespace POP_10.Model
     [Serializable]
     public class Namestaj : INotifyPropertyChanged
     {
-        
+        public ObservableCollection<Namestaj> Namestaji { get; set; }
+
         private int id;
 
         public int Id
@@ -61,22 +63,22 @@ namespace POP_10.Model
             get
             { if (tipNamestaja == null)
                 {
-                    tipNamestaja = TipNamestaja.GetById(tipN);
+                    tipNamestaja = TipNamestaja.GetById(tipNID);
                 }
                 return tipNamestaja;
             }
             set {
                 tipNamestaja = value;
-                tipN = tipNamestaja.Id;
+                tipNID = tipNamestaja.Id;
                 OnPropertyChanged("TipNamsetaja"); }
         }
 
-        private int tipN;
+        private int tipNID;
 
-        public int TipN
+        public int TipNID
         {
-            get { return tipN; }
-            set { tipN = value; OnPropertyChanged("TipN"); }
+            get { return tipNID; }
+            set { tipNID = value; OnPropertyChanged("TipNID"); }
         }
 
         public int akcija;
@@ -86,7 +88,7 @@ namespace POP_10.Model
 
         public override string ToString()
         {
-            return $"Naziv: {Naziv},{JedinicnaCena},{TipNamestaja.GetById(TipN).Naziv}";
+            return $"Naziv: {Naziv},{JedinicnaCena},{TipNamestaja.GetById(TipNID).Naziv}";
         }
 
         protected void OnPropertyChanged  (string propertyName)
@@ -96,7 +98,19 @@ namespace POP_10.Model
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
+        public object Clone()
+        {
+            return new Namestaj()
+            {
+                Id = id,
+                Naziv = naziv,
+                JedinicnaCena = jedinicnaCena,
+                TipNamestaja = tipNamestaja,
+                TipNID = tipNID,
+                Kolicina = kolicina,
+                Obrisan = obrisan
+            };
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
 

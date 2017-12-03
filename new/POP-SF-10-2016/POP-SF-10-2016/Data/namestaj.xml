@@ -3,37 +3,37 @@
   <Namestaj>
     <akcija>0</akcija>
     <Id>1</Id>
-    <Naziv>blabl</Naziv>
-    <JedinicnaCena>99</JedinicnaCena>
-    <Kolicina>8</Kolicina>
+    <Naziv>Kuhinjska stolica</Naziv>
+    <JedinicnaCena>0</JedinicnaCena>
+    <Kolicina>30</Kolicina>
+    <Obrisan>false</Obrisan>
+    <TipNID>4</TipNID>
+  </Namestaj>
+  <Namestaj>
+    <akcija>0</akcija>
+    <Id>2</Id>
+    <Naziv>Bracni krevet</Naziv>
+    <JedinicnaCena>0</JedinicnaCena>
+    <Kolicina>300</Kolicina>
     <Obrisan>false</Obrisan>
     <TipNID>1</TipNID>
   </Namestaj>
   <Namestaj>
     <akcija>0</akcija>
-    <Id>2</Id>
-    <Naziv>Namestaj</Naziv>
-    <JedinicnaCena>0</JedinicnaCena>
-    <Kolicina>0</Kolicina>
-    <Obrisan>false</Obrisan>
-    <TipNID>2</TipNID>
-  </Namestaj>
-  <Namestaj>
-    <akcija>0</akcija>
     <Id>3</Id>
-    <Naziv>asad</Naziv>
+    <Naziv>Sofa</Naziv>
     <JedinicnaCena>0</JedinicnaCena>
-    <Kolicina>0</Kolicina>
-    <Obrisan>true</Obrisan>
+    <Kolicina>50</Kolicina>
+    <Obrisan>false</Obrisan>
     <TipNID>2</TipNID>
   </Namestaj>
   <Namestaj>
     <akcija>0</akcija>
     <Id>4</Id>
-    <Naziv>asdasddsadas</Naziv>
+    <Naziv>Dvorisni sto</Naziv>
     <JedinicnaCena>0</JedinicnaCena>
-    <Kolicina>0</Kolicina>
-    <Obrisan>false</Obrisan>
-    <TipNID>0</TipNID>
+    <Kolicina>10</Kolicina>
+    <Obrisan>true</Obrisan>
+    <TipNID>3</TipNID>
   </Namestaj>
 </ArrayOfNamestaj>

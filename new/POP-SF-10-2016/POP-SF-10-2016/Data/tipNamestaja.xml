@@ -3,11 +3,21 @@
   <TipNamestaja>
     <Id>1</Id>
     <Obrisan>false</Obrisan>
-    <Naziv>sofa</Naziv>
+    <Naziv>Krevet</Naziv>
   </TipNamestaja>
   <TipNamestaja>
     <Id>2</Id>
     <Obrisan>false</Obrisan>
-    <Naziv>krevet</Naziv>
+    <Naziv>Sofa</Naziv>
+  </TipNamestaja>
+  <TipNamestaja>
+    <Id>3</Id>
+    <Obrisan>false</Obrisan>
+    <Naziv>Sto</Naziv>
+  </TipNamestaja>
+  <TipNamestaja>
+    <Id>4</Id>
+    <Obrisan>true</Obrisan>
+    <Naziv>Stolica</Naziv>
   </TipNamestaja>
 </ArrayOfTipNamestaja>

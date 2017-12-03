@@ -40,8 +40,13 @@ namespace POP_SF_10_2016.UI
             this.operacija = operacija;
             this.tipNamestaja = tipNamestaja;
             tbNaziv.DataContext = tipNamestaja;
-            //cbObrisan.DataContext = tipNamestaja;
+            cbObrisan.DataContext = tipNamestaja;
+            if(operacija == Operacija.DODAVANJE)
+            {
+                cbObrisan.Visibility = Visibility.Hidden;
+            }
         }
+
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
@@ -53,7 +58,9 @@ namespace POP_SF_10_2016.UI
                 case Operacija.DODAVANJE:
 
                     var Id = postojeciTipNamestaja.Count + 1;
+                    var obrisan = false;
                     tipNamestaja.Id = Id;
+                    tipNamestaja.Obrisan = obrisan;
                     postojeciTipNamestaja.Add(tipNamestaja);
 
                     break;
@@ -64,6 +71,7 @@ namespace POP_SF_10_2016.UI
                         if (n.Id == tipNamestaja.Id)
                         {
                             n.Naziv = tipNamestaja.Naziv;
+                            n.Obrisan = tipNamestaja.Obrisan;
                            
                             break;
                         }

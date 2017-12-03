@@ -17,7 +17,12 @@
   </TipNamestaja>
   <TipNamestaja>
     <Id>4</Id>
-    <Obrisan>true</Obrisan>
+    <Obrisan>false</Obrisan>
     <Naziv>Stolica</Naziv>
+  </TipNamestaja>
+  <TipNamestaja>
+    <Id>5</Id>
+    <Obrisan>false</Obrisan>
+    <Naziv>Polica</Naziv>
   </TipNamestaja>
 </ArrayOfTipNamestaja>

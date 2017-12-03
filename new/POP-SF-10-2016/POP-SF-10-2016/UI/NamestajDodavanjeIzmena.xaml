@@ -11,12 +11,11 @@
         <Label Content="Kolicina:" HorizontalAlignment="Left" Height="28" Margin="0,56,0,0" VerticalAlignment="Top" Width="56" RenderTransformOrigin="0.571,0.786"/>
         <Label Content="Cena" HorizontalAlignment="Left" Height="28" Margin="0,89,0,0" VerticalAlignment="Top" Width="48"/>
         <Label Content="Tip namestaja" HorizontalAlignment="Left" Height="28" Margin="0,122,0,0" VerticalAlignment="Top" Width="93"/>
-        <Label Content="Akcija" HorizontalAlignment="Left" Height="28" Margin="0,180,0,0" VerticalAlignment="Top" Width="72"/>
         <Button Content="Potvrdi"  Click="Potvrdi" HorizontalAlignment="Left" Height="28" Margin="10,231,0,0" VerticalAlignment="Top" Width="96"/>
         <Button Content="Ponisti"  Click="Ponisti" HorizontalAlignment="Left" Height="28" Margin="180,231,0,0" VerticalAlignment="Top" Width="86"/>
         <TextBox Name="tbNaziv" HorizontalAlignment="Left" Height="28" Margin="91,23,0,0" TextWrapping="Wrap" Text="{Binding Path=Naziv}" VerticalAlignment="Top" Width="175"/>
         <TextBox Name ="tbKolicina" HorizontalAlignment="Left" Height="28" Margin="91,56,0,0" TextWrapping="Wrap" Text="{Binding Path=Kolicina}" VerticalAlignment="Top" Width="175"/>
-        <TextBox Name ="tbCena" HorizontalAlignment="Left" Height="28" Margin="91,89,0,0" TextWrapping="Wrap" Text="{Binding Path=Cena}" VerticalAlignment="Top" Width="175"/>
+        <TextBox Name ="tbCena" HorizontalAlignment="Left" Height="28" Margin="91,89,0,0" TextWrapping="Wrap" Text="{Binding Path=JedinicnaCena}" VerticalAlignment="Top" Width="175"/>
         <ComboBox Name="cbTipNID" HorizontalAlignment="Left" Height="28" Margin="91,122,0,0" VerticalAlignment="Top" Width="175" SelectedItem="{Binding Path=TipNamestaja}"/>
 
     </Grid>

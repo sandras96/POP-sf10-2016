@@ -4,7 +4,7 @@
     <akcija>0</akcija>
     <Id>1</Id>
     <Naziv>Kuhinjska stolica</Naziv>
-    <JedinicnaCena>0</JedinicnaCena>
+    <JedinicnaCena>1700</JedinicnaCena>
     <Kolicina>30</Kolicina>
     <Obrisan>false</Obrisan>
     <TipNID>4</TipNID>
@@ -13,7 +13,7 @@
     <akcija>0</akcija>
     <Id>2</Id>
     <Naziv>Bracni krevet</Naziv>
-    <JedinicnaCena>0</JedinicnaCena>
+    <JedinicnaCena>25000</JedinicnaCena>
     <Kolicina>300</Kolicina>
     <Obrisan>false</Obrisan>
     <TipNID>1</TipNID>
@@ -22,7 +22,7 @@
     <akcija>0</akcija>
     <Id>3</Id>
     <Naziv>Sofa</Naziv>
-    <JedinicnaCena>0</JedinicnaCena>
+    <JedinicnaCena>9000</JedinicnaCena>
     <Kolicina>50</Kolicina>
     <Obrisan>false</Obrisan>
     <TipNID>2</TipNID>
@@ -31,9 +31,18 @@
     <akcija>0</akcija>
     <Id>4</Id>
     <Naziv>Dvorisni sto</Naziv>
-    <JedinicnaCena>0</JedinicnaCena>
+    <JedinicnaCena>4500</JedinicnaCena>
     <Kolicina>10</Kolicina>
     <Obrisan>true</Obrisan>
+    <TipNID>3</TipNID>
+  </Namestaj>
+  <Namestaj>
+    <akcija>0</akcija>
+    <Id>5</Id>
+    <Naziv>Trpezarijski sto</Naziv>
+    <JedinicnaCena>10000</JedinicnaCena>
+    <Kolicina>10</Kolicina>
+    <Obrisan>false</Obrisan>
     <TipNID>3</TipNID>
   </Namestaj>
 </ArrayOfNamestaj>

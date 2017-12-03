@@ -66,6 +66,7 @@ namespace POP_SF_10_2016.UI
             };
             var kdi = new KorisniciDodavanjeIzmena(KorisniciDodavanjeIzmena.Operacija.DODAVANJE, noviKorisnik);
             kdi.ShowDialog();
+            view.Refresh();
 
         }
         private void Izlaz(object sender, RoutedEventArgs e)
@@ -79,6 +80,8 @@ namespace POP_SF_10_2016.UI
             var copy = (Korisnik)selektovaniKorisnik.Clone;
             var kdi = new KorisniciDodavanjeIzmena(KorisniciDodavanjeIzmena.Operacija.IZMENA, copy);
             kdi.Show();
+            view.Refresh();
+            
         }
         private void Obrisi(object sender, RoutedEventArgs e)
         {
@@ -97,6 +100,7 @@ namespace POP_SF_10_2016.UI
                     }
                 }
                 GenericsSerializer.Serialize("korisnik.xml", listaKorisnika);
+                view.Refresh();
             }
         }
 

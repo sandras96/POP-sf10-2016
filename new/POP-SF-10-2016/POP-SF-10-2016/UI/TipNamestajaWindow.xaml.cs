@@ -63,6 +63,7 @@ namespace POP_SF_10_2016.UI
 
             var tndi = new TipNamestajaDodavanjeIzmena(TipNamestajaDodavanjeIzmena.Operacija.DODAVANJE, noviTipNamestaja);
             tndi.ShowDialog();
+            view.Refresh();
         }
 
        
@@ -72,6 +73,7 @@ namespace POP_SF_10_2016.UI
             TipNamestaja selektovaniTipNamestaja = (TipNamestaja)dgTipNamestaja.SelectedItem;
             TipNamestajaDodavanjeIzmena tndi = new TipNamestajaDodavanjeIzmena(TipNamestajaDodavanjeIzmena.Operacija.IZMENA, selektovaniTipNamestaja);
             tndi.ShowDialog();
+            view.Refresh();
         }
 
         private void Obrisi_Click(object sender, RoutedEventArgs e)
@@ -83,6 +85,7 @@ namespace POP_SF_10_2016.UI
             {
                 selektovaniTipNamestaja.Obrisan = true;
             }
+            view.Refresh();
         }
 
         private void cbStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)

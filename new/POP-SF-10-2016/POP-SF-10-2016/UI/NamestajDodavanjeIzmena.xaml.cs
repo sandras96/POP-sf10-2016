@@ -2,6 +2,7 @@
 using POP_10.Util;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,12 +37,26 @@ namespace POP_SF_10_2016.UI
             InitializeComponent();
             this.namestaj =  namestaj;
             this.operacija = operacija;
-            cbTipNID.ItemsSource = Projekat.Instance.tipNam;
+            cbTipNID.ItemsSource = filterActive(Projekat.Instance.tipNam);
+            cbTipNID.SelectedIndex = 0;
 
             tbNaziv.DataContext = namestaj;
             tbCena.DataContext = namestaj;
             tbKolicina.DataContext = namestaj;
             cbTipNID.DataContext = namestaj;
+        }
+
+        private ObservableCollection<TipNamestaja> filterActive(ObservableCollection<TipNamestaja> lista)
+        {
+            ObservableCollection<TipNamestaja> filteredList = new ObservableCollection<TipNamestaja>();
+            foreach(TipNamestaja tipNamestaja in lista)
+            {
+                if(tipNamestaja.Obrisan == false)
+                {
+                    filteredList.Add(tipNamestaja);
+                }
+            }
+            return filteredList;
         }
 
         private void Ponisti(object sender, RoutedEventArgs e)
@@ -82,18 +97,6 @@ namespace POP_SF_10_2016.UI
             GenericsSerializer.Serialize("namestaj.xml", postojeciNamestaj);
             this.Close();
         }
-
-       /* private static int NoviIDzaNamestaj()
-        {
-            int j = 0;
-            foreach (var namestaj in Projekat.Instance.namestaj)
-            {
-                if (j <= namestaj.Id)
-                    j = namestaj.Id;
-
-            }
-            return j + 1;
-        }*/
 
     }
 }

@@ -184,7 +184,7 @@ namespace POP_SF_10_2016
             Korisnik ulogovan = null;
                 foreach (var korisnik in Projekat.Instance.korisnik)
                 {
-                    if (korIme == korisnik.KorisnickoIme && lozinka == korisnik.Lozinka)
+                    if (korIme == korisnik.KorisnickoIme && lozinka == korisnik.Lozinka && korisnik.Obrisan == false)
                 {
                     ulogovan = korisnik;
                 }

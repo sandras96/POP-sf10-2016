@@ -70,6 +70,7 @@ namespace POP_SF_10_2016.UI
             };
             var ndi = new NamestajDodavanjeIzmena(noviNamestaj, NamestajDodavanjeIzmena.Operacija.DODAVANJE);
             ndi.ShowDialog();
+            view.Refresh();
         }
 
         public void Izmena(object sender, RoutedEventArgs e)
@@ -77,7 +78,8 @@ namespace POP_SF_10_2016.UI
             Namestaj selektovaniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
             var ndi = new NamestajDodavanjeIzmena(selektovaniNamestaj, NamestajDodavanjeIzmena.Operacija.IZMENA);
             ndi.ShowDialog();
-           
+            view.Refresh();
+
         }
         private void Brisanje(object sender, RoutedEventArgs e)
         {
@@ -114,7 +116,7 @@ namespace POP_SF_10_2016.UI
                     }
                 }*/
              GenericsSerializer.Serialize("namestaj.xml", Projekat.Instance.namestaj);
-
+             view.Refresh();
             }
         }
 

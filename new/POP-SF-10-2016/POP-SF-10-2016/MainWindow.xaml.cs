@@ -24,7 +24,7 @@ namespace POP_SF_10_2016
     /// </summary>
 
     public partial class MainWindow : Window
-    {
+    { ObservableCollection<TipNamestaja> lista2 = new ObservableCollection<TipNamestaja>();
         /*  ObservableCollection<Namestaj> lista = new ObservableCollection<Namestaj>();
           ObservableCollection<Korisnik> lista1 = new ObservableCollection<Korisnik>();
           ObservableCollection<TipNamestaja> lista2 = new ObservableCollection<TipNamestaja>();
@@ -122,10 +122,14 @@ namespace POP_SF_10_2016
         {
             InitializeComponent();
 
-            cbTipKorisnika.Items.Add(TipKorisnika.Administrator);
-            cbTipKorisnika.Items.Add(TipKorisnika.Prodavac);
-            cbTipKorisnika.SelectedIndex = 0;
+            lista2.Add(new TipNamestaja
+            { Id = 2,
+                Obrisan = false,
+                Naziv = "krevet",
+  
 
+
+            });
             /*  lista.Add(new Namestaj
               {
                   Id = 1,
@@ -153,7 +157,7 @@ namespace POP_SF_10_2016
 
 
               });
-              */
+              
             lista5.Add(new Namestaj
             {
                 Id = 6,
@@ -163,39 +167,40 @@ namespace POP_SF_10_2016
                 
 
             });
+            
             GenericsSerializer.Serialize("namestaj.xml", lista5);
             
           /*  GenericsSerializer.Serialize("namestaj.xml", lista);
             GenericsSerializer.Serialize("korisnik.xml", lista1);
             GenericsSerializer.Serialize("tipNamestaja.xml", lista2);
           */
+           
+           //GenericsSerializer.Serialize("tipNamestaja.xml", lista2);
         }
-
         
-        private static bool Login(String korIme, String lozinka, String tip)
+        
+        private static Korisnik Login(String korIme, String lozinka)
             {
+            Korisnik ulogovan = null;
                 foreach (var korisnik in Projekat.Instance.korisnik)
                 {
-                    if (korIme == korisnik.KorisnickoIme && lozinka == korisnik.Lozinka && "Administrator" == tip)
+                    if (korIme == korisnik.KorisnickoIme && lozinka == korisnik.Lozinka)
                 {
-                    return true;
-                }
-                        
-                if (korIme == korisnik.KorisnickoIme && lozinka == korisnik.Lozinka && "Prodavac" == tip)
-                {
-                    return true;
+                    ulogovan = korisnik;
                 }
                     
                  }
-                return false;
+                return ulogovan;
             }
     private void Potvrdi(object sender, RoutedEventArgs e)
             {
-                if(Login(tbKI.Text, tbLoz.Text, cbTipKorisnika.SelectedItem.ToString()) == true)
+            var ulogovan = Login(tbKI.Text, tbLoz.Text);
+                if (ulogovan != null)
                 {
-                    var window11 = new Window11();
+                Projekat.Instance.ulogovanKorisnik = ulogovan;
+                var window11 = new Window11();
                 window11.ShowDialog();
-                } 
+            } 
                 
                 else { MessageBox.Show("Netacni podaci! Pokusajte ponovo", "Greska", MessageBoxButton.OK, MessageBoxImage.Error); }
             }

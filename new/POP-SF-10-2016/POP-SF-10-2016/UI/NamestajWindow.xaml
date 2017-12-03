@@ -7,21 +7,26 @@
         mc:Ignorable="d"
         Title="Namestaj" Height="300" Width="572">
     <Grid Margin="0,0,0,-2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="214*"/>
+        </Grid.ColumnDefinitions>
 
 
-        <DataGrid AutoGenerateColumns="True" Name="dgNamestaj" Height="222" VerticalAlignment="Top" >
+        <DataGrid AutoGenerateColumns="False" Name="dgNamestaj" Height="222" VerticalAlignment="Top" Grid.ColumnSpan="3" >
             <DataGrid.Columns>
-
+                <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Naziv" Width="*" Binding="{Binding Naziv}"/>
+                <DataGridTextColumn Header="JedinicnaCena" Width="*" Binding="{Binding JedinicnaCena}"/>
+                <DataGridTextColumn Header="Kolicina" Width="*" Binding="{Binding Kolicina}"/>
                 <DataGridTextColumn Header="Tip namestaja" Width="*" Binding="{Binding TipNamestaja}"/>
-                <DataGridTextColumn Header="Cena" Width="100" Binding="{Binding JedinicnaCena}"/>
-                <DataGridTextColumn Header="Kolicina" Width="50" Binding="{Binding KolicinaUMagacinu}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Dodavanje" HorizontalAlignment="Left" Height="32" Margin="60,229,0,0" Click="Dodavanje" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Izmena" Click="Izmena" HorizontalAlignment="Left" Height="32" Margin="327,227,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button Content="Brisanje" Click="Brisanje" HorizontalAlignment="Left" Height="32" Margin="194,229,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="2.1,1.556"/>
-        <Button Content="Ponisti" Click="Ponisti" HorizontalAlignment="Left" Height="32" Margin="459,227,0,0" VerticalAlignment="Top" Width="67"/>
-
+        <Button Content="Dodavanje" HorizontalAlignment="Left" Height="32" Margin="28,229,0,0" Click="Dodavanje" VerticalAlignment="Top" Width="66"/>
+        <Button Content="Izmena" Click="Izmena" HorizontalAlignment="Left" Height="32" Margin="51,229,0,0" VerticalAlignment="Top" Width="67" Grid.Column="1"/>
+        <Button Content="Brisanje" Click="Brisanje" HorizontalAlignment="Left" Height="32" Margin="130,229,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="2.1,1.556"/>
+        <Button Content="Ponisti" Click="Ponisti" HorizontalAlignment="Left" Height="32" Margin="17,229,0,0" VerticalAlignment="Top" Width="67" Grid.Column="2"/>
+        <ComboBox Name="cbStatus" HorizontalAlignment="Left" Height="32" Margin="110,229,0,0" VerticalAlignment="Top" Width="67" SelectionChanged="cbStatus_SelectionChanged" Grid.Column="2"/>
     </Grid>
 </Window>

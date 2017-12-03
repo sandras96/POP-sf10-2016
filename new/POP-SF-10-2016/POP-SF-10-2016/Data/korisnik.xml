@@ -7,6 +7,7 @@
     <KorisnickoIme>a</KorisnickoIme>
     <Lozinka>a</Lozinka>
     <TipKorisnika>Administrator</TipKorisnika>
+    <Obrisan>false</Obrisan>
   </Korisnik>
   <Korisnik>
     <Id>2</Id>
@@ -15,5 +16,24 @@
     <KorisnickoIme />
     <Lozinka />
     <TipKorisnika>Prodavac</TipKorisnika>
+    <Obrisan>false</Obrisan>
+  </Korisnik>
+  <Korisnik>
+    <Id>3</Id>
+    <Ime>sds</Ime>
+    <Prezime>fsdf</Prezime>
+    <KorisnickoIme />
+    <Lozinka>fs</Lozinka>
+    <TipKorisnika>Prodavac</TipKorisnika>
+    <Obrisan>false</Obrisan>
+  </Korisnik>
+  <Korisnik>
+    <Id>4</Id>
+    <Ime>gg</Ime>
+    <Prezime>ggg</Prezime>
+    <KorisnickoIme />
+    <Lozinka>gg</Lozinka>
+    <TipKorisnika>Administrator</TipKorisnika>
+    <Obrisan>true</Obrisan>
   </Korisnik>
 </ArrayOfKorisnik>

@@ -35,6 +35,10 @@ namespace POP_10.Model
             set { naziv = value; OnPropertyChanged("Naziv"); }
         }
 
+        public override string ToString()
+        {
+            return $"{Naziv}";
+        }
 
         public static TipNamestaja GetById(int id)
         {

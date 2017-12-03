@@ -24,23 +24,37 @@ namespace POP_SF_10_2016.UI
     public partial class NamestajWindow : Window
     {
         ICollectionView view;
+        public Namestaj selektovaniNamestaj { get; set; }
+        public enum Status
+        {
+            OBRISAN,
+            NEOBRISAN
+        };
 
-        public Namestaj SelektovaniNamestaj { get; set; }
+
 
         public NamestajWindow()
         {
-            InitializeComponent();
+           InitializeComponent();
 
             view = CollectionViewSource.GetDefaultView(Projekat.Instance.namestaj);
-            view.Filter = Filter;
+            view.Filter = FilterNeobrisan;
 
             dgNamestaj.ItemsSource = view;
             dgNamestaj.IsSynchronizedWithCurrentItem = true;
             dgNamestaj.DataContext = this;
+            cbStatus.Items.Add(Status.NEOBRISAN);
+            cbStatus.Items.Add(Status.OBRISAN);
+            cbStatus.SelectedIndex = 0;
         }
-        private bool Filter(object obj)
+        private bool FilterNeobrisan(object obj)
         {
             return ((Namestaj)obj).Obrisan == false;
+        }
+
+        private bool FilterObrisan(object obj)
+        {
+            return ((Namestaj)obj).Obrisan == true;
         }
 
         public void Ponisti(object sender, RoutedEventArgs e)
@@ -60,32 +74,62 @@ namespace POP_SF_10_2016.UI
 
         public void Izmena(object sender, RoutedEventArgs e)
         {
-            var selektovaniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
+            Namestaj selektovaniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
             var ndi = new NamestajDodavanjeIzmena(selektovaniNamestaj, NamestajDodavanjeIzmena.Operacija.IZMENA);
             ndi.ShowDialog();
            
         }
-
-        public void Brisanje(object sender, RoutedEventArgs e)
+        private void Brisanje(object sender, RoutedEventArgs e)
         {
-            var listaNamestaja = Projekat.Instance.namestaj;
+            var staraListaN = Projekat.Instance.namestaj;
+            var nam = (Namestaj)dgNamestaj.SelectedItem;
 
-            if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete{SelektovaniNamestaj.Naziv}?", "Brisanje", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show($"Da li ste sigurni da zelite da izbrisete izabrani namestaj: {nam.Naziv}?", "Poruka o brisanju ", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                foreach (var nam in listaNamestaja)
+                foreach (var n in staraListaN)
                 {
-                    if (nam.Id == SelektovaniNamestaj.Id)
+                    if (n.Id == nam.Id)
                     {
-                        nam.Obrisan = true;
-                        view.Filter = Filter;
+                        n.Obrisan = true;
+                        
                         break;
                     }
-                }
+                
+                
+            }
+         /*   public void Brisanje(object sender, RoutedEventArgs e)
+        {
+            Namestaj selektovaniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
+
+            if (MessageBox.Show(messageBoxText: $"Da li ste sigurni da zelite da obrisete{selektovaniNamestaj.Naziv}?", caption: "Brisanje", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                
+                foreach (var nam in Projekat.Instance.namestaj)
+                {
+                    if (nam.Id == selektovaniNamestaj.Id)
+                    {
+                        nam.Obrisan = true;
+                       // view.Filter = Filter;
+                        break;
+                    }
+                }*/
              GenericsSerializer.Serialize("namestaj.xml", Projekat.Instance.namestaj);
 
             }
         }
 
+        private void cbStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Status status = (Status)cbStatus.SelectedItem;
+            if (status == Status.OBRISAN)
+            {
+                view.Filter = FilterObrisan;
+            }
+            else
+            {
+                view.Filter = FilterNeobrisan;
+            }
+        }
     }
     
     }

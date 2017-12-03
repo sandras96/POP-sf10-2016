@@ -72,6 +72,12 @@
     <Compile Include="UI\NamestajWindow.xaml.cs">
       <DependentUpon>NamestajWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\TipNamestajaDodavanjeIzmena.xaml.cs">
+      <DependentUpon>TipNamestajaDodavanjeIzmena.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TipNamestajaWindow.xaml.cs">
+      <DependentUpon>TipNamestajaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -112,6 +118,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\NamestajWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TipNamestajaDodavanjeIzmena.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TipNamestajaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

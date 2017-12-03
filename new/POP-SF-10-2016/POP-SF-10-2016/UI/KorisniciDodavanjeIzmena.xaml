@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         Title="KorisniciDodavanjeIzmena" Height="300" Width="300">
     <Grid>
-        <Label Content="Ime:" Name="tbIme" HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" VerticalAlignment="Top" Width="38"/>
-        <Label Content="Prezime:" Name="tbPrezime" HorizontalAlignment="Left" Height="24" Margin="10,39,0,0" VerticalAlignment="Top" Width="57"/>
-        <Label Content="Korisnicko ime:" Name="tbKorisnickoIme" HorizontalAlignment="Left" Height="24" Margin="10,93,0,0" VerticalAlignment="Top" Width="89"/>
-        <Label Content="Lozinka:" Name="tbLozinka" HorizontalAlignment="Left" Height="24" Margin="10,122,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label Content="Ime:" HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" VerticalAlignment="Top" Width="38"/>
+        <Label Content="Prezime:" HorizontalAlignment="Left" Height="24" Margin="10,39,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label Content="Korisnicko ime:" HorizontalAlignment="Left" Height="24" Margin="10,93,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Lozinka:" HorizontalAlignment="Left" Height="24" Margin="10,122,0,0" VerticalAlignment="Top" Width="57"/>
         <Label Content="Tip korisnika:" HorizontalAlignment="Left" Height="24" Margin="10,191,0,0" VerticalAlignment="Top" Width="89"/>
         <ComboBox Name="cbTipKorisnika" HorizontalAlignment="Left" Height="24" Margin="118,191,0,0" SelectedItem="{Binding Path=TipKorisnika}" VerticalAlignment="Top" Width="128"/>
         <Button Content="Izlaz" Click="Izlaz" HorizontalAlignment="Left" Height="21" Margin="186,238,0,0" VerticalAlignment="Top" Width="71"/>
         <Button Content="Sacuvaj" Click="Sacuvaj" HorizontalAlignment="Left" Height="21" Margin="67,238,0,0" VerticalAlignment="Top" Width="79"/>
+        <TextBox Name="tbIme" HorizontalAlignment="Left" Height="20" Margin="99,14,0,0" TextWrapping="Wrap" Text="{Binding Path=Ime}" VerticalAlignment="Top" Width="158"/>
+        <TextBox Name="tbPrezime" HorizontalAlignment="Left" Height="24" Margin="99,48,0,0" TextWrapping="Wrap" Text="{Binding Path=Prezime}" VerticalAlignment="Top" Width="158"/>
+        <TextBox Name="tbKorisnickoIme" HorizontalAlignment="Left" Height="24" Margin="104,93,0,0" TextWrapping="Wrap" Text="{Binding Path=KorisnickoIme}" VerticalAlignment="Top" Width="153"/>
+        <TextBox Name="tbLozinka" HorizontalAlignment="Left" Height="25" Margin="104,122,0,0" TextWrapping="Wrap" Text="{Binding Path=Lozinka}" VerticalAlignment="Top" Width="153"/>
 
     </Grid>
 </Window>

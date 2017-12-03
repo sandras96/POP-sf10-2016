@@ -13,12 +13,14 @@
                 <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="*"/>
                 <DataGridTextColumn Header="Korisnicko ime" Binding="{Binding KorisnickoIme}" Width="*"/>
                 <DataGridTextColumn Header="Tip korisnika" Binding="{Binding TipKorisnika}" Width="*"/>
+                
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Izlaz" Click="Izlaz" HorizontalAlignment="Left" Height="32" Margin="250,195,0,0" VerticalAlignment="Top" Width="61"/>
         <Button Content="Obrisi" Click="Obrisi" HorizontalAlignment="Left" Height="32" Margin="162,195,0,0" VerticalAlignment="Top" Width="61"/>
         <Button Content="Izmeni" Click="Izmeni" HorizontalAlignment="Left" Height="32" Margin="81,195,0,0" VerticalAlignment="Top" Width="65"/>
         <Button Content="Dodaj" Click="Dodaj" HorizontalAlignment="Left" Height="32" Margin="0,195,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox Name="cbStatus" HorizontalAlignment="Left" Height="44" Margin="203,255,0,0" VerticalAlignment="Top" Width="83" SelectionChanged="cbStatus_SelectionChanged"/>
 
 
     </Grid>

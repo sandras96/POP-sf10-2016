@@ -22,14 +22,36 @@ namespace POP_SF_10_2016.UI
     /// </summary>
     public partial class KorisniciWindow : Window
     {
+        ICollectionView view;
+        public Korisnik selektovaniKorisnik { get; set; }
+        public enum Status
+        {
+            OBRISAN,
+            NEOBRISAN
+        };
+
 
         public KorisniciWindow()
         {
             InitializeComponent();
-
+            view = CollectionViewSource.GetDefaultView(Projekat.Instance.korisnik);
+            view.Filter = FilterNeobrisan;
             dgKorisnik.IsSynchronizedWithCurrentItem = true;
             dgKorisnik.DataContext = this;
-            dgKorisnik.ItemsSource = Projekat.Instance.korisnik;
+            dgKorisnik.ItemsSource = view;
+            cbStatus.Items.Add(Status.NEOBRISAN);
+            cbStatus.Items.Add(Status.OBRISAN);
+            cbStatus.SelectedIndex = 0;
+        }
+
+        private bool FilterNeobrisan(object obj)
+        {
+            return ((Korisnik)obj).Obrisan == false;
+        }
+
+        private bool FilterObrisan(object obj)
+        {
+            return ((Korisnik)obj).Obrisan == true;
         }
 
         private void Dodaj(object sender, RoutedEventArgs e)
@@ -53,28 +75,41 @@ namespace POP_SF_10_2016.UI
 
         private void Izmeni(object sender, RoutedEventArgs e)
         {
-            var selektovaniKorisnik = (Korisnik)dgKorisnik.SelectedItem;
-            var kdi = new KorisniciDodavanjeIzmena(KorisniciDodavanjeIzmena.Operacija.IZMENA, selektovaniKorisnik);
+            Korisnik selektovaniKorisnik = (Korisnik)dgKorisnik.SelectedItem;
+            var copy = (Korisnik)selektovaniKorisnik.Clone;
+            var kdi = new KorisniciDodavanjeIzmena(KorisniciDodavanjeIzmena.Operacija.IZMENA, copy);
             kdi.Show();
-
         }
         private void Obrisi(object sender, RoutedEventArgs e)
         {
-
+            Korisnik selektovaniKorisnik = (Korisnik)dgKorisnik.SelectedItem;
             var listaKorisnika = Projekat.Instance.korisnik;
-            var k= (Korisnik)dgKorisnik.SelectedItem;
-            if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete{k.Ime} {k.Prezime}?", "Brisanje", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+           // var k= (Korisnik)dgKorisnik.SelectedItem;
+            if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete{selektovaniKorisnik.Ime} {selektovaniKorisnik.Prezime}?", "Brisanje", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                foreach (var k1 in listaKorisnika)
+                foreach (var k in listaKorisnika)
                 {
-                    if (k1.Id == k.Id)
+                    if (k.Id == selektovaniKorisnik.Id)
                     {
-                        //kor.Obrisan = true;
+                        k.Obrisan = true;
 
                         break;
                     }
                 }
                 GenericsSerializer.Serialize("korisnik.xml", listaKorisnika);
+            }
+        }
+
+        private void cbStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Status status = (Status)cbStatus.SelectedItem;
+            if(status == Status.OBRISAN)
+            {
+                view.Filter = FilterObrisan;
+            }
+            else
+            {
+                view.Filter = FilterNeobrisan;
             }
         }
     }

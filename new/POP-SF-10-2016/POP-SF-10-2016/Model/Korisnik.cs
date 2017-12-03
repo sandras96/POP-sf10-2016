@@ -63,6 +63,13 @@ namespace POP_10.Model
             set { tipKorisnka = value; OnPropertyChanged("TipKorisnika"); }
         }
 
+        private bool obrisan;
+
+        public bool Obrisan
+        {
+            get { return obrisan; }
+            set { obrisan = value; OnPropertyChanged("Obrisan"); }
+        }
 
 
 
@@ -82,18 +89,16 @@ namespace POP_10.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public object Clone()
+        public object Clone => new Korisnik()
         {
-            return new Korisnik()
-            {
-                Id = id,
-                Ime = ime,
-                Prezime = prezime,
-                KorisnickoIme = korisnickoIme,
-                Lozinka = lozinka,
-                TipKorisnika = tipKorisnka,
-            };
-        }
+            Id = id,
+            Ime = ime,
+            Prezime = prezime,
+            KorisnickoIme = korisnickoIme,
+            Lozinka = lozinka,
+            TipKorisnika = tipKorisnka,
+            Obrisan = obrisan
+        };
         protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)

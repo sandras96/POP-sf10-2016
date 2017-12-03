@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POP_10.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,15 +23,22 @@ namespace POP_SF_10_2016.UI
         public Window11()
         {
             InitializeComponent();
+            if(Projekat.Instance.ulogovanKorisnik.TipKorisnika.ToString() == "Prodavac")
+            {
+                btnKorisnici.Visibility = Visibility.Hidden;
+                btnNamestaj.Visibility = Visibility.Hidden;
+                btnTipNamestaja.Visibility = Visibility.Hidden;
+
+            }
         }
 
-        private void btnNamestaj(object sender, RoutedEventArgs e)
+        private void btnNamestaj_Click(object sender, RoutedEventArgs e)
         {
             NamestajWindow nw = new NamestajWindow();
             nw.ShowDialog();
         }
         
-        private void btnKorisnici(object sender, RoutedEventArgs e)
+        private void btnKorisnici_Click(object sender, RoutedEventArgs e)
         {
             KorisniciWindow kw = new KorisniciWindow();
             kw.ShowDialog();
@@ -45,13 +53,13 @@ namespace POP_SF_10_2016.UI
         {
             AkcijaWindow aw = new AkcijaWindow();
             aw.ShowDialog();
-        }
-        private void btnTipNamestaja(object sender, RoutedEventArgs e)
+        }*/
+        private void btnTipNamestaja_Click(object sender, RoutedEventArgs e)
         {
             TipNamestajaWindow tnw = new TipNamestajaWindow();
             tnw.ShowDialog();
         }
-        */
+        
         private void Izlaz(object sender, RoutedEventArgs e)
         {
             this.Close();

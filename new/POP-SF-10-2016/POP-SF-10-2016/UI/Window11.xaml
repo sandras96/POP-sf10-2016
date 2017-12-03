@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Window11" Height="300" Width="300">
     <Grid>
-        <Button Content="Namestaj" Click="btnNamestaj"  HorizontalAlignment="Left" Height="30" Margin="10,22,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Korisnici" Click="btnKorisnici" HorizontalAlignment="Left" Height="33" Margin="173,32,0,0" VerticalAlignment="Top" Width="87"/>
-
+        <Button Name="btnNamestaj" Content="Namestaj" Click="btnNamestaj_Click"  HorizontalAlignment="Left" Height="30" Margin="37,22,0,0" VerticalAlignment="Top" Width="220"/>
+        <Button Name="btnKorisnici" Content="Korisnici" Click="btnKorisnici_Click" HorizontalAlignment="Left" Height="33" Margin="37,73,0,0" VerticalAlignment="Top" Width="220"/>
+        <Button Name="btnTipNamestaja" Content="Tip Namestaja" Click="btnTipNamestaja_Click" HorizontalAlignment="Left" Height="33" Margin="37,124,0,0" VerticalAlignment="Top" Width="220"/>
     </Grid>
 </Window>

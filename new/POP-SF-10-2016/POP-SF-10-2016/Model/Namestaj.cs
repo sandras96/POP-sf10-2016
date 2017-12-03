@@ -12,7 +12,7 @@ namespace POP_10.Model
     [Serializable]
     public class Namestaj : INotifyPropertyChanged
     {
-        public ObservableCollection<Namestaj> Namestaji { get; set; }
+       // public ObservableCollection<Namestaj> Namestaji { get; set; }
 
         private int id;
 
@@ -81,15 +81,18 @@ namespace POP_10.Model
             set { tipNID = value; OnPropertyChanged("TipNID"); }
         }
 
+        
+
+
         public int akcija;
      
 
 
-
+        /*
         public override string ToString()
         {
             return $"Naziv: {Naziv},{JedinicnaCena},{TipNamestaja.GetById(TipNID).Naziv}";
-        }
+        }*/
 
         protected void OnPropertyChanged  (string propertyName)
         {

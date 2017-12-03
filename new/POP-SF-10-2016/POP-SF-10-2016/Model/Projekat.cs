@@ -18,7 +18,8 @@ namespace POP_10.Model
         public ObservableCollection<Namestaj> namestaj;
         public ObservableCollection<Korisnik> korisnik;
         public ObservableCollection<TipNamestaja> tipNam;
-       
+        public Korisnik ulogovanKorisnik { get; set; }
+
         private Projekat()
         {
            

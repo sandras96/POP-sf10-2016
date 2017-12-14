@@ -22,7 +22,7 @@ namespace POP_10.Model
 
         private Projekat()
         {
-           
+            TipNamestaja = TipNamestaja.GetAll();
             namestaj = new ObservableCollection<Namestaj>(GenericsSerializer.Deserialize<Namestaj>("namestaj.xml"));
             korisnik = new ObservableCollection<Korisnik>(GenericsSerializer.Deserialize<Korisnik>("korisnik.xml"));
             tipNam = new ObservableCollection<TipNamestaja>(GenericsSerializer.Deserialize<TipNamestaja>("tipNamestaja.xml"));

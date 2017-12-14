@@ -12,7 +12,7 @@ namespace POP_10.Model
     [Serializable]
     public class Namestaj : INotifyPropertyChanged
     {
-       // public ObservableCollection<Namestaj> Namestaji { get; set; }
+       
 
         private int id;
 

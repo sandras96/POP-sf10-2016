@@ -43,6 +43,24 @@
     <JedinicnaCena>10000</JedinicnaCena>
     <Kolicina>10</Kolicina>
     <Obrisan>false</Obrisan>
-    <TipNID>3</TipNID>
+    <TipNID>6</TipNID>
+  </Namestaj>
+  <Namestaj>
+    <akcija>0</akcija>
+    <Id>6</Id>
+    <Naziv>dfgdf</Naziv>
+    <JedinicnaCena>44</JedinicnaCena>
+    <Kolicina>4</Kolicina>
+    <Obrisan>true</Obrisan>
+    <TipNID>1</TipNID>
+  </Namestaj>
+  <Namestaj>
+    <akcija>0</akcija>
+    <Id>7</Id>
+    <Naziv>n123</Naziv>
+    <JedinicnaCena>450</JedinicnaCena>
+    <Kolicina>5</Kolicina>
+    <Obrisan>true</Obrisan>
+    <TipNID>6</TipNID>
   </Namestaj>
 </ArrayOfNamestaj>

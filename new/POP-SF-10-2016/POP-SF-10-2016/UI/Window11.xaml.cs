@@ -23,6 +23,14 @@ namespace POP_SF_10_2016.UI
         public Window11()
         {
             InitializeComponent();
+
+           /* TipNamestaja novododatiTip = TipNamestaja.Create(new TipNamestaja()
+            {
+                Naziv = "Cekam ID",
+                Obrisan - false
+            }); --Provera da li radi baza*/
+
+
             if(Projekat.Instance.ulogovanKorisnik.TipKorisnika.ToString() == "Prodavac")
             {
                 btnKorisnici.Visibility = Visibility.Hidden;

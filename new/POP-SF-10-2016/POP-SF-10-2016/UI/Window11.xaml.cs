@@ -36,7 +36,15 @@ namespace POP_SF_10_2016.UI
                 btnKorisnici.Visibility = Visibility.Hidden;
                 btnNamestaj.Visibility = Visibility.Hidden;
                 btnTipNamestaja.Visibility = Visibility.Hidden;
+                btnAkcija.Visibility = Visibility.Hidden;
+                btnDodatnaUsluga.Visibility = Visibility.Hidden;
+                
+            
 
+            }
+            if(Projekat.Instance.ulogovanKorisnik.TipKorisnika.ToString() == "Administrator")
+            {
+                btnProdajaNamestaja.Visibility = Visibility.Hidden;
             }
         }
 
@@ -51,17 +59,14 @@ namespace POP_SF_10_2016.UI
             KorisniciWindow kw = new KorisniciWindow();
             kw.ShowDialog();
         }
-        /*
-        private void btnProdajaNamestaja(object sender, RoutedEventArgs e)
-        {
-            ProdajaNamestajaWindow pnw = new ProdajaNamestajaWindow();
-            pnw.ShowDialog();
-        }
-        private void btnAkcija(object sender, RoutedEventArgs e)
+        
+       
+       /* private void btnAkcija(object sender, RoutedEventArgs e)
         {
             AkcijaWindow aw = new AkcijaWindow();
             aw.ShowDialog();
         }*/
+
         private void btnTipNamestaja_Click(object sender, RoutedEventArgs e)
         {
             TipNamestajaWindow tnw = new TipNamestajaWindow();
@@ -71,6 +76,30 @@ namespace POP_SF_10_2016.UI
         private void Izlaz(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnProdajaNamestaja_Click(object sender, RoutedEventArgs e)
+        {
+            ProdajaNamestajaWindow pnw = new ProdajaNamestajaWindow();
+            pnw.ShowDialog();
+
+        }
+
+        private void btnDodatnaUsluga_Click(object sender, RoutedEventArgs e)
+        {
+            DodatnaUslugaWindow duw = new DodatnaUslugaWindow();
+            duw.ShowDialog();
+             
+        }
+
+        private void btnAkcija_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSalon_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

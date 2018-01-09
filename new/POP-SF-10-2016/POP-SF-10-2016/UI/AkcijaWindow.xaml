@@ -1,0 +1,21 @@
+﻿<Window x:Class="POP_SF_10_2016.UI.AkcijaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POP_SF_10_2016.UI"
+        mc:Ignorable="d"
+        Title="AkcijaWindow" Height="300" Width="300">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="292">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Pocetak" Binding="{Binding Ime}" Width="*"/>
+                <DataGridTextColumn Header="Kraj" Binding="{Binding Prezime}" Width="*"/>
+                <DataGridTextColumn Header="Popust" Binding="{Binding Ime}" Width="*"/>
+           
+            </DataGrid.Columns>
+        
+        </DataGrid>
+
+    </Grid>
+</Window>

@@ -116,6 +116,22 @@ namespace POP_SF_10_2016.UI
                 view.Filter = FilterNeobrisan;
             }
         }
+
+        private void btnSort_Click(object sender, RoutedEventArgs e)
+        {
+            ICollectionView view = CollectionViewSource.GetDefaultView(dgKorisnik.ItemsSource);
+
+            if (cbSort.SelectedIndex == 0)
+            {
+                dgKorisnik.Items.SortDescriptions.Clear();
+                dgKorisnik.Items.SortDescriptions.Add(new SortDescription("Ime", ListSortDirection.Ascending));
+            }
+            else if (cbSort.SelectedIndex == 1)
+            {
+                dgKorisnik.Items.SortDescriptions.Clear();
+                dgKorisnik.Items.SortDescriptions.Add(new SortDescription("Prezime", ListSortDirection.Ascending));
+            }
+        }
     }
 }
 

@@ -5,20 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="Tip Namestaja" Height="300" Width="300">
-    <Grid>
-        <DataGrid HorizontalAlignment="Left" Name="dgTipNamestaja" AutoGenerateColumns="False" Height="269" VerticalAlignment="Top" Width="292">
+        Title="Tip Namestaja" Height="436" Width="368">
+    <Grid Margin="0,0,-8,22">
+        <DataGrid HorizontalAlignment="Left" Name="dgTipNamestaja" AutoGenerateColumns="False" Height="158" VerticalAlignment="Top" Width="358" Margin="0,155,0,0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Id}"/>
+
                 <DataGridTextColumn Header="Naziv" Width="*" Binding="{Binding Naziv}"/>
 
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Dodaj" Name="Dodaj" HorizontalAlignment="Left" Height="32" Margin="10,214,0,0" VerticalAlignment="Top" Click="Dodaj_Click" Width="67"/>
-        <Button Name="Izmeni" Content="Izmeni" HorizontalAlignment="Left" Height="32" Margin="111,214,0,0" VerticalAlignment="Top" Click="Izmeni_Click"  Width="67"/>
-        <Button Name="Obrisi" Content="Obrisi" HorizontalAlignment="Left" Height="32" Margin="204,214,0,0" VerticalAlignment="Top" Click="Obrisi_Click"  Width="67"/>
-        <ComboBox Name="cbStatus" HorizontalAlignment="Left" Height="32" Margin="204,155,0,0" VerticalAlignment="Top" Width="67" SelectionChanged="cbStatus_SelectionChanged" RenderTransformOrigin="0.478,-0.594"/>
+        <Button Content="Dodaj" Name="Dodaj" HorizontalAlignment="Left" Height="21" Margin="0,329,0,0" VerticalAlignment="Top" Click="Dodaj_Click" Width="67"/>
+        <Button Name="Izmeni" Content="Izmeni" HorizontalAlignment="Left" Height="21" Margin="98,329,0,0" VerticalAlignment="Top" Click="Izmeni_Click"  Width="67"/>
+        <Button Name="Obrisi" Content="Obrisi" HorizontalAlignment="Left" Height="21" Margin="195,329,0,0" VerticalAlignment="Top" Click="Obrisi_Click"  Width="67"/>
+        <ComboBox Name="cbStatus" HorizontalAlignment="Left" Height="21" Margin="98,364,0,-9" VerticalAlignment="Top" Width="101" SelectionChanged="cbStatus_SelectionChanged" RenderTransformOrigin="0.478,-0.594"/>
+        <ComboBox Name="cbSort" HorizontalAlignment="Left" Height="28" Margin="134,26,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="Naziv"/>
+        </ComboBox>
+        <Button Content="Sort" Name="Sort" Click="Sort_Click" HorizontalAlignment="Left" Margin="283,26,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Sortiraj po:" HorizontalAlignment="Left" Margin="43,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.947,-1.385" Width="76"/>
 
     </Grid>
 </Window>

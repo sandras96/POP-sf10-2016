@@ -100,5 +100,16 @@ namespace POP_SF_10_2016.UI
                 view.Filter = FilterNeobrisan;
             }
         }
+
+        private void Sort_Click(object sender, RoutedEventArgs e)
+        {
+            ICollectionView view = CollectionViewSource.GetDefaultView(dgTipNamestaja.ItemsSource);
+
+            if (cbSort.SelectedIndex == 0)
+            {
+                dgTipNamestaja.Items.SortDescriptions.Clear();
+                dgTipNamestaja.Items.SortDescriptions.Add(new SortDescription("Naziv", ListSortDirection.Ascending));
+            }
+        }
     }
 }

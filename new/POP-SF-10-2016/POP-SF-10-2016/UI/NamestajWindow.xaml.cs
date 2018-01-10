@@ -132,6 +132,41 @@ namespace POP_SF_10_2016.UI
                 view.Filter = FilterNeobrisan;
             }
         }
+
+        private void Sort_Click(object sender, RoutedEventArgs e)
+        {
+            ICollectionView view = CollectionViewSource.GetDefaultView(dgNamestaj.ItemsSource);
+
+            if (cbSort.SelectedIndex == 0)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("Naziv", ListSortDirection.Ascending));
+            }
+            else if (cbSort.SelectedIndex == 1)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("TipNID", ListSortDirection.Ascending));
+            }
+            else if (cbSort.SelectedIndex == 2)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("JedinicnaCena", ListSortDirection.Ascending));
+            }
+        }
+
+        private bool NamestajFilter(object obj)
+        {
+            if (String.IsNullOrEmpty(tbPretraga.Text))
+                return true;
+
+            var namestaj = (Namestaj)obj;
+
+            return (namestaj.Naziv.StartsWith(tbPretraga.Text, StringComparison.OrdinalIgnoreCase) || namestaj.TipNamestaja.Naziv.StartsWith(tbPretraga.Text, StringComparison.OrdinalIgnoreCase));
+        }
+        private void tbPretraga_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //CollectionViewSource.GetDefaultView(dgNamestaj.ItemsSource).Refresh();
+        }
     }
     
     }

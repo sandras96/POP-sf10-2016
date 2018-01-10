@@ -20,6 +20,7 @@ namespace POP_10.Model
         public ObservableCollection<TipNamestaja> tipNam;
         public ObservableCollection<ProdajaNamestaja> prodajaNamestaja;
         public ObservableCollection<DodatnaUsluga> dodatnaUsluga;
+        public ObservableCollection<Akcija> akcija;
       
         public Korisnik ulogovanKorisnik { get; set; }
 
@@ -31,7 +32,7 @@ namespace POP_10.Model
              tipNam = new ObservableCollection<TipNamestaja>(GenericsSerializer.Deserialize<TipNamestaja>("tipNamestaja.xml"));
              prodajaNamestaja = new ObservableCollection<ProdajaNamestaja>(GenericsSerializer.Deserialize<ProdajaNamestaja>("prodajaNamestaja.xml"));
              dodatnaUsluga = new ObservableCollection<DodatnaUsluga>(GenericsSerializer.Deserialize<DodatnaUsluga>("dodatnaUsluga.xml"));
-            
+            akcija = new ObservableCollection<Akcija>(GenericsSerializer.Deserialize<Akcija>("akcija.xml"));
         }
     }
 }

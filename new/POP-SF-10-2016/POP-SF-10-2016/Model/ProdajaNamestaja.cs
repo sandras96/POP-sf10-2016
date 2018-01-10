@@ -52,6 +52,13 @@ namespace POP_10.Model
             get { return ukupnaCena; }
             set { ukupnaCena = value; OnPropertyChanged("UkupnaCena"); }
         }
+        private bool obrisan;
+
+        public bool Obrisan
+        {
+            get { return obrisan; }
+            set { obrisan = value; OnPropertyChanged("Obrisan"); }
+        }
 
         public static ProdajaNamestaja GetById(int Id)
         {
@@ -68,6 +75,15 @@ namespace POP_10.Model
 
 
         public const double PDV = 0.02;
+
+        
+
+        /*public DodatnaUsluga DodatnaUsluga
+        {
+            get { return dodatnaUsluga; }
+            set { dodatnaUsluga = value; OnPropertyChanged("DodatnaUsluga"); }
+        }*/
+
         public ObservableCollection<Namestaj> NamestajZaProdaju { get; set; }
         public ObservableCollection<int> DodatnaUslugaId { get; set; }
 
@@ -88,6 +104,14 @@ namespace POP_10.Model
             }
         }
 
+        public void izracunajCenu()
+        {
+            foreach(Namestaj namestaj in this.NamestajZaProdaju)
+            {
+                this.ukupnaCena += (namestaj.JedinicnaCena + namestaj.JedinicnaCena * PDV) * namestaj.Kolicina;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public object Clone()
@@ -101,6 +125,7 @@ namespace POP_10.Model
                 UkupnaCena = ukupnaCena,
                 NamestajZaProdaju = new ObservableCollection<Namestaj>(NamestajZaProdaju),
                 DodatnaUslugaId = new ObservableCollection<int>(DodatnaUslugaId)
+                
             };
         }
     }

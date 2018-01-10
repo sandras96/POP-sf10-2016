@@ -8,8 +8,8 @@
   </DodatnaUsluga>
   <DodatnaUsluga>
     <Id>2</Id>
-    <Naziv>sdfsdgs</Naziv>
+    <Naziv>ffff</Naziv>
     <Cena>0</Cena>
-    <Obrisan>false</Obrisan>
+    <Obrisan>true</Obrisan>
   </DodatnaUsluga>
 </ArrayOfDodatnaUsluga>

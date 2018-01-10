@@ -63,4 +63,31 @@
     <Obrisan>true</Obrisan>
     <TipNID>6</TipNID>
   </Namestaj>
+  <Namestaj>
+    <akcija>0</akcija>
+    <Id>8</Id>
+    <Naziv>xvdv</Naziv>
+    <JedinicnaCena>66</JedinicnaCena>
+    <Kolicina>6</Kolicina>
+    <Obrisan>true</Obrisan>
+    <TipNID>1</TipNID>
+  </Namestaj>
+  <Namestaj>
+    <akcija>0</akcija>
+    <Id>9</Id>
+    <Naziv>esfds</Naziv>
+    <JedinicnaCena>6757</JedinicnaCena>
+    <Kolicina>76</Kolicina>
+    <Obrisan>true</Obrisan>
+    <TipNID>6</TipNID>
+  </Namestaj>
+  <Namestaj>
+    <akcija>0</akcija>
+    <Id>10</Id>
+    <Naziv>ssfsd</Naziv>
+    <JedinicnaCena>6</JedinicnaCena>
+    <Kolicina>6</Kolicina>
+    <Obrisan>false</Obrisan>
+    <TipNID>6</TipNID>
+  </Namestaj>
 </ArrayOfNamestaj>

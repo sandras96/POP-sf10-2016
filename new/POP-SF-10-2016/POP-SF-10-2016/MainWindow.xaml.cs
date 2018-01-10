@@ -30,8 +30,13 @@ namespace POP_SF_10_2016
           ObservableCollection<TipNamestaja> lista2 = new ObservableCollection<TipNamestaja>();
           /*  ObservableCollection<Namestaj> lista = new ObservableCollection<Namestaj>();
            *  
-          */ ObservableCollection<Namestaj> lista5 = new ObservableCollection<Namestaj>();
-            /*public MainWindow()
+          */
+        ObservableCollection<ProdajaNamestaja> lista6 = new ObservableCollection<ProdajaNamestaja>();
+        ObservableCollection<Namestaj> lista5 = new ObservableCollection<Namestaj>();
+        ObservableCollection<DodatnaUsluga> lista9 = new ObservableCollection<DodatnaUsluga>();
+        ObservableCollection<Akcija> akcijalista = new ObservableCollection<Akcija>();
+        
+        /*public MainWindow()
             {
                 InitializeComponent();
 
@@ -130,6 +135,33 @@ namespace POP_SF_10_2016
 
 
             });
+            akcijalista.Add(new Akcija
+            {
+                Id = 1,
+               
+
+            });
+
+            lista9.Add(new DodatnaUsluga
+            {
+                Id = 1,
+                Naziv = "dostava",
+                Cena = 5000,
+                Obrisan = true
+            
+            });
+            lista6.Add(new ProdajaNamestaja
+            {
+                Id = 1,
+                BrojRacuna= "333",
+                Kupac = "Sandra"
+              
+            });
+
+            GenericsSerializer.Serialize("akcija.xml", akcijalista);
+            GenericsSerializer.Serialize("dodatnaUsluga.xml", lista9);
+            GenericsSerializer.Serialize("prodajaNamestaja.xml", lista6);
+
             /*  lista.Add(new Namestaj
               {
                   Id = 1,

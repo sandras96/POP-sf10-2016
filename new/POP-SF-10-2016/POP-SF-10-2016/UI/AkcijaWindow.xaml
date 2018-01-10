@@ -5,17 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="AkcijaWindow" Height="300" Width="300">
-    <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="292">
+        Title="AkcijaWindow" Height="329" Width="372">
+    <Grid Margin="0,0,2,-2">
+        <DataGrid HorizontalAlignment="Left" AutoGenerateColumns="False" Name="dgAkcija" Height="212" VerticalAlignment="Top" Width="362">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Pocetak" Binding="{Binding Ime}" Width="*"/>
-                <DataGridTextColumn Header="Kraj" Binding="{Binding Prezime}" Width="*"/>
-                <DataGridTextColumn Header="Popust" Binding="{Binding Ime}" Width="*"/>
-           
+                <DataGridTextColumn Header="Pocetak" Binding="{Binding Pocetak}" Width="*"/>
+                <DataGridTextColumn Header="Kraj" Binding="{Binding Kraj}" Width="*"/>
+                <DataGridTextColumn Header="Popust" Binding="{Binding Popust}" Width="*"/>
+
             </DataGrid.Columns>
-        
+
         </DataGrid>
+        <Button Content="Dodaj" Name="Dodaj" Click="Dodaj_Click" HorizontalAlignment="Left" Margin="10,227,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Izmeni" Name="Izmeni" Click="Izmeni_Click" HorizontalAlignment="Left" Margin="90,227,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Obrisi" Name="Obrisi" Click="Obrisi_Click" HorizontalAlignment="Left" Margin="170,227,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Ponisti" Name="Ponisti" Click="Ponisti_Click" HorizontalAlignment="Left" Margin="250,227,0,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox Name="cbStatus" SelectionChanged="cbStatus_SelectionChanged" HorizontalAlignment="Left" Height="22" Margin="64,268,0,0" VerticalAlignment="Top" Width="162"/>
 
     </Grid>
 </Window>

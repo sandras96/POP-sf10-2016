@@ -46,7 +46,7 @@ namespace POP_SF_10_2016.UI
             tbBrRacuna.DataContext = prodajaNamestaja;
             tbKupac.DataContext = prodajaNamestaja;
             cbUsluga.DataContext = prodajaNamestaja;
-
+            cbUsluga.ItemsSource = Projekat.Instance.dodatnaUsluga;
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
@@ -70,6 +70,7 @@ namespace POP_SF_10_2016.UI
                             prodaja.DatumProdaje = prodajaNamestaja.DatumProdaje;
                             prodaja.BrojRacuna = prodajaNamestaja.BrojRacuna;
                             prodaja.Kupac = prodajaNamestaja.Kupac;
+                            prodaja.DodatnaUslugaId = prodajaNamestaja.DodatnaUslugaId;
                             prodaja.NamestajZaProdaju = prodajaNamestaja.NamestajZaProdaju;
                             break;
                         }
@@ -80,6 +81,10 @@ namespace POP_SF_10_2016.UI
 
             }
             GenericsSerializer.Serialize("prodajaNamestaja.xml", listaProdaje);
+
+            this.prodajaNamestaja.izracunajCenu();
+            MessageBox.Show(this.prodajaNamestaja.UkupnaCena.ToString(), caption: "Ukupna Cena", button: MessageBoxButton.OK, icon: MessageBoxImage.Information);
+
             this.Close();
         }
 
@@ -87,7 +92,7 @@ namespace POP_SF_10_2016.UI
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
         {
             NamestajProdaja np = new NamestajProdaja();
-            np.ShowDialog();
+            np.Show();
 
           
 
@@ -98,7 +103,63 @@ namespace POP_SF_10_2016.UI
         private void np_Closed(object sender, EventArgs e)
          {
             var add = sender as NamestajProdaja;
-            prodajaNamestaja.NamestajZaProdaju.Add((add).Namestaj1);
+            Boolean dodat = false;
+            if(add.ProdajNamestaj != null)
+            {
+                foreach (Namestaj namestaj in prodajaNamestaja.NamestajZaProdaju)
+                {
+                    if (add.ProdajNamestaj.Id == namestaj.Id)
+                    {
+                        namestaj.Kolicina += add.ProdajNamestaj.Kolicina;
+                        dodat = true;
+                    }
+                       
+                }
+                if (!dodat)
+                {
+                    prodajaNamestaja.NamestajZaProdaju.Add((add).ProdajNamestaj);
+                }
+               
+            }
+           
+         
+            
          }
+
+        private void btnUkloni_Click(object sender, RoutedEventArgs e)
+        {
+            var selektovaniNamestaj = dgPNamestaj.SelectedItem as Namestaj;
+            if (selektovaniNamestaj != null)
+            {
+                prodajaNamestaja.NamestajZaProdaju.Remove(selektovaniNamestaj);
+                foreach (Namestaj namestaj in Projekat.Instance.namestaj)
+                {
+                    if (selektovaniNamestaj.Id == namestaj.Id)
+                    {
+                        namestaj.Kolicina += selektovaniNamestaj.Kolicina;
+                    }
+                }
+            }
+            else
+            {
+                // poruka da mora biti selektovan namestaj isto kao i za brisanje
+            }
+            
+        }
+
+        private void btnPonisti_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Namestaj prodajniNamestaj in prodajaNamestaja.NamestajZaProdaju)
+            {
+                foreach (Namestaj originalNamestaj in Projekat.Instance.namestaj)
+                {
+                    if(prodajniNamestaj.Id == originalNamestaj.Id)
+                    {
+                        originalNamestaj.Kolicina += prodajniNamestaj.Kolicina;
+                    }
+                }
+            }
+            this.Close();
+        }
     }
 }

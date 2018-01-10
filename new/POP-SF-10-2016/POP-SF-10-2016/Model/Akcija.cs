@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,8 @@ namespace POP_10.Model
         public DateTime pocetak { get; set; }
         public decimal popust { get; set; }
         public DateTime kraj { get; set; }
-        public bool Obrisan { get; set; }*/
+        public bool Obrisan { get; set; }
+        private ObservableCollection<int> namestajNaAkcijiId*/
 
 
         private int id;
@@ -30,7 +32,7 @@ namespace POP_10.Model
         public DateTime Pocetak
         {
             get { return pocetak; }
-            set { Pocetak = value; OnPropertyChanged("Pocetak"); }
+            set { pocetak = value; OnPropertyChanged("Pocetak"); }
         }
 
         private DateTime kraj;
@@ -38,7 +40,7 @@ namespace POP_10.Model
         public DateTime Kraj
         {
             get { return kraj; }
-            set { Kraj = value; OnPropertyChanged("Kraj"); }
+            set { kraj = value; OnPropertyChanged("Kraj"); }
         }
 
         private decimal popust;
@@ -57,6 +59,30 @@ namespace POP_10.Model
             set { obrisan = value; OnPropertyChanged("Obrisan"); }
         }
 
+       // private ObservableCollection<int> namestajNaAkcijiId;
+
+        public ObservableCollection<int> NamestajNaAkcijiId { get; set; }
+      /*  {
+            get { return namestajNaAkcijiId;; }
+            set { namestajNaAkcijiId = value; OnPropertyChanged("NamestajNaAkcijiId"); }
+        }*/
+
+        public override string ToString()
+        {
+            return $"{Pocetak.ToShortDateString()} - {Kraj.ToShortTimeString()}";
+        }
+
+        public static Akcija GetById(int Id)
+        {
+            foreach (var akcija in Projekat.Instance.akcija)
+            {
+                if(akcija.Id == Id)
+                {
+                    return akcija;
+                }
+            }
+            return null;
+        }
         public object Clone()
         {
             return new Akcija()

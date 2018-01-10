@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="Window11" Height="300" Width="300">
-    <Grid>
-        <Button Name="btnNamestaj" Content="Namestaj" Click="btnNamestaj_Click"  HorizontalAlignment="Left" Height="30" Margin="37,22,0,0" VerticalAlignment="Top" Width="220"/>
+        Title="Window11" Height="387" Width="300">
+    <Grid Margin="0,0,0,29">
+        <Button Name="btnNamestaj" Content="Namestaj" Click="btnNamestaj_Click"  HorizontalAlignment="Left" Height="33" Margin="37,22,0,0" VerticalAlignment="Top" Width="220"/>
         <Button Name="btnKorisnici" Content="Korisnici" Click="btnKorisnici_Click" HorizontalAlignment="Left" Height="33" Margin="37,73,0,0" VerticalAlignment="Top" Width="220"/>
         <Button Name="btnTipNamestaja" Content="Tip Namestaja" Click="btnTipNamestaja_Click" HorizontalAlignment="Left" Height="33" Margin="37,124,0,0" VerticalAlignment="Top" Width="220"/>
+        <Button Name="btnProdajaNamestaja" Content="Prodaja Namestaja" Click="btnProdajaNamestaja_Click" HorizontalAlignment="Left" Height="33" Margin="37,22,0,0" VerticalAlignment="Top" Width="220"/>
+        <Button Name="btnDodatnaUsluga" Content="Dodatna Usluga" Click="btnDodatnaUsluga_Click" HorizontalAlignment="Left" Height="33" Margin="37,175,0,0" VerticalAlignment="Top" Width="220"/>
+        <Button Name="btnAkcija" Content="Akcija" Click="btnAkcija_Click" HorizontalAlignment="Left" Height="33" Margin="37,225,0,0" VerticalAlignment="Top" Width="220"/>
+        <Button Name="btnSalon" Content="Salon" Click="btnSalon_Click" HorizontalAlignment="Left" Height="33" Margin="37,278,0,0" VerticalAlignment="Top" Width="220"/>
     </Grid>
 </Window>

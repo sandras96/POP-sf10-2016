@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,8 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UI\AkcijaDodavanjeIzmena.xaml.cs">
+      <DependentUpon>AkcijaDodavanjeIzmena.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AkcijaWindow.xaml.cs">
+      <DependentUpon>AkcijaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DodatnaUslugaDodavanjeIzmena.xaml.cs">
+      <DependentUpon>DodatnaUslugaDodavanjeIzmena.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DodatnaUslugaWindow.xaml.cs">
+      <DependentUpon>DodatnaUslugaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\GlavniProzor.xaml.cs">
       <DependentUpon>GlavniProzor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KolicinaWindow.xaml.cs">
+      <DependentUpon>KolicinaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\KorisniciDodavanjeIzmena.xaml.cs">
       <DependentUpon>KorisniciDodavanjeIzmena.xaml</DependentUpon>
@@ -69,8 +85,17 @@
     <Compile Include="UI\NamestajDodavanjeIzmena.xaml.cs">
       <DependentUpon>NamestajDodavanjeIzmena.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\NamestajProdaja.xaml.cs">
+      <DependentUpon>NamestajProdaja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\NamestajWindow.xaml.cs">
       <DependentUpon>NamestajWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProdajaDodavanjeIzmena.xaml.cs">
+      <DependentUpon>ProdajaDodavanjeIzmena.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProdajaNamestajaWindow.xaml.cs">
+      <DependentUpon>ProdajaNamestajaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\TipNamestajaDodavanjeIzmena.xaml.cs">
       <DependentUpon>TipNamestajaDodavanjeIzmena.xaml</DependentUpon>
@@ -97,7 +122,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\AkcijaDodavanjeIzmena.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AkcijaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DodatnaUslugaDodavanjeIzmena.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DodatnaUslugaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\GlavniProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\KolicinaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,7 +162,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\NamestajProdaja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\NamestajWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ProdajaDodavanjeIzmena.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ProdajaNamestajaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +237,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\tipNamestaja.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\prodajaNamestaja.xml" />
+    <Resource Include="Data\dodatnaUsluga.xml" />
+    <Resource Include="Data\akcija.xml" />
+    <Content Include="Sql_scripts\crebas.sql" />
+    <Content Include="Sql_scripts\sql2.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

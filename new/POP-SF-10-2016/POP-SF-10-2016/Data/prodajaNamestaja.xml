@@ -6,5 +6,6 @@
     <BrojRacuna>333</BrojRacuna>
     <Kupac>Sandra</Kupac>
     <UkupnaCena>0</UkupnaCena>
+    <Obrisan>false</Obrisan>
   </ProdajaNamestaja>
 </ArrayOfProdajaNamestaja>

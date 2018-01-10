@@ -61,7 +61,7 @@ namespace POP_SF_10_2016.UI
         }
         
        
-       /* private void btnAkcija(object sender, RoutedEventArgs e)
+       /*private void btnAkcija(object sender, RoutedEventArgs e)
         {
             AkcijaWindow aw = new AkcijaWindow();
             aw.ShowDialog();
@@ -94,7 +94,8 @@ namespace POP_SF_10_2016.UI
 
         private void btnAkcija_Click(object sender, RoutedEventArgs e)
         {
-
+            AkcijaWindow aw = new AkcijaWindow();
+            aw.ShowDialog();
         }
 
         private void btnSalon_Click(object sender, RoutedEventArgs e)

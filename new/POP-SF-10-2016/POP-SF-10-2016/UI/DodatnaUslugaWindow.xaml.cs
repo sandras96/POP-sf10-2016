@@ -37,17 +37,17 @@ namespace POP_SF_10_2016.UI
             InitializeComponent();
 
             view = CollectionViewSource.GetDefaultView(Projekat.Instance.dodatnaUsluga);
-           // view.Filter = FilterNeobrisan;
+            view.Filter = FilterNeobrisan;
 
             dgDodatanaUsluga.ItemsSource = view;
             dgDodatanaUsluga.IsSynchronizedWithCurrentItem = true;
             dgDodatanaUsluga.DataContext = this;
-           // cbStatus.Items.Add(Status.NEOBRISAN);
-           // cbStatus.Items.Add(Status.OBRISAN);
-            //cbStatus.SelectedIndex = 0;
+            cbStatus.Items.Add(Status.NEOBRISAN);
+            cbStatus.Items.Add(Status.OBRISAN);
+            cbStatus.SelectedIndex = 0;
         }
 
-       /* private bool FilterNeobrisan(object obj)
+       private bool FilterNeobrisan(object obj)
         {
             return ((DodatnaUsluga)obj).Obrisan == false;
         }
@@ -57,7 +57,7 @@ namespace POP_SF_10_2016.UI
             return ((DodatnaUsluga)obj).Obrisan == true;
         }
 
-    */
+    
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
         {
             var novaUsluga = new DodatnaUsluga()
@@ -107,10 +107,12 @@ namespace POP_SF_10_2016.UI
             this.Close();
         }
 
-       /* private void cbStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       
+
+        private void cbStatus_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             Status status = (Status)cbStatus.SelectedItem;
-            if(status == Status.OBRISAN)
+            if (status == Status.OBRISAN)
             {
                 view.Filter = FilterObrisan;
             }
@@ -118,8 +120,23 @@ namespace POP_SF_10_2016.UI
             {
                 view.Filter = FilterNeobrisan;
             }
+        }
 
-        }*/
+        private void btnSort_Click(object sender, RoutedEventArgs e)
+        {
+            ICollectionView view = CollectionViewSource.GetDefaultView(dgDodatanaUsluga.ItemsSource);
+
+            if (cbSort.SelectedIndex == 0)
+            {
+                dgDodatanaUsluga.Items.SortDescriptions.Clear();
+                dgDodatanaUsluga.Items.SortDescriptions.Add(new SortDescription("Naziv", ListSortDirection.Ascending));
+            }
+            else if (cbSort.SelectedIndex == 1)
+            {
+                dgDodatanaUsluga.Items.SortDescriptions.Clear();
+                dgDodatanaUsluga.Items.SortDescriptions.Add(new SortDescription("Cena", ListSortDirection.Ascending));
+            }
+        }
     }
 
 } 

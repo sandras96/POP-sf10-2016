@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="DodatnaUslugaDodavanjeIzmena" Height="300" Width="300">
-    <Grid>
-        <Label Content="Naziv" HorizontalAlignment="Left" Height="25" Margin="22,37,0,0" VerticalAlignment="Top" Width="82"/>
-        <Label Content="Cena" HorizontalAlignment="Left" Height="25" Margin="22,86,0,0" VerticalAlignment="Top" Width="82"/>
-        <TextBox Name="tbNaziv" Text="{Binding Path=Naziv}"  HorizontalAlignment="Left" Height="26" Margin="131,37,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="tbCena" Text="{Binding Path=Cena}" HorizontalAlignment="Left" Height="26" Margin="131,86,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button Content="Potvrdi" Name="btnPotvrdi" Click="btnPotvrdi_Click" HorizontalAlignment="Left" Height="20" Margin="37,147,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Ponisti" Name="btnPonisti" Click="btnPonisti_Click" HorizontalAlignment="Left" Height="20" Margin="168,147,0,0" VerticalAlignment="Top" Width="75"/>
+        Title="Dodatna usluga dodavanje i izmena" Height="215" Width="300">
+    <Grid Height="205" VerticalAlignment="Top">
+        <Label Content="Naziv:" HorizontalAlignment="Left" Height="25" Margin="22,37,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Cena:" HorizontalAlignment="Left" Height="25" Margin="22,86,0,0" VerticalAlignment="Top" Width="82"/>
+        <TextBox Name="tbNaziv" Text="{Binding Path=Naziv}"  HorizontalAlignment="Left" Height="26" Margin="83,37,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="168"/>
+        <TextBox Name="tbCena" Text="{Binding Path=Cena}" Height="26" Margin="83,86,41,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+        <Button Content="Ok" Name="btnPotvrdi" Click="btnPotvrdi_Click" HorizontalAlignment="Left" Height="20" Margin="37,147,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Cancel" Name="btnPonisti" Click="btnPonisti_Click" HorizontalAlignment="Left" Height="20" Margin="168,147,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

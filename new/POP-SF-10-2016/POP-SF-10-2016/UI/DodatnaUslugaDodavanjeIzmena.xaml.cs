@@ -51,7 +51,8 @@ namespace POP_SF_10_2016.UI
 
 
                     dodatnaUsluga.Id = postojecaUsluga.Count + 1;
-                    postojecaUsluga.Add(dodatnaUsluga);
+                    dodatnaUsluga= DodatnaUsluga.Create(dodatnaUsluga);
+                   // postojecaUsluga.Add(dodatnaUsluga);
 
                     break;
 
@@ -62,7 +63,7 @@ namespace POP_SF_10_2016.UI
                         {
                             usluga.Naziv = dodatnaUsluga.Naziv;
                             usluga.Cena = dodatnaUsluga.Cena;
-
+                            DodatnaUsluga.Update(usluga);
                             break;
                         }
 
@@ -70,7 +71,7 @@ namespace POP_SF_10_2016.UI
 
                     break;
             }
-            GenericsSerializer.Serialize("dodatnaUsluga.xml", postojecaUsluga);
+           // GenericsSerializer.Serialize("dodatnaUsluga.xml", postojecaUsluga);
             this.Close();
         }
 

@@ -64,7 +64,7 @@ namespace POP_SF_10_2016.UI
                 Popust = 0,
                 Pocetak = DateTime.Today,
                 Kraj = DateTime.Today,
-                NamestajNaAkcijiId = new ObservableCollection<int>()
+                NamestajNaAkciji = new ObservableCollection<Namestaj>()
             };
             var adi = new AkcijaDodavanjeIzmena(novaAkcija, AkcijaDodavanjeIzmena.Operacija.DODAVANJE);
             adi.ShowDialog();

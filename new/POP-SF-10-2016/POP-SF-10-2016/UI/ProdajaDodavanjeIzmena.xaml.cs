@@ -2,6 +2,7 @@
 using POP_10.Util;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,12 +42,26 @@ namespace POP_SF_10_2016.UI
            // dgPNamestaj.DataContext = this;
           //  dgPNamestaj.IsSynchronizedWithCurrentItem = true;
             dgPNamestaj.ItemsSource = prodajaNamestaja.NamestajZaProdaju;
+            cbUsluga.ItemsSource = filterActive(Projekat.Instance.dodatnaUsluga);
+            cbUsluga.SelectedIndex = 0;
 
             dpDatumProdaje.DataContext = prodajaNamestaja;
             tbBrRacuna.DataContext = prodajaNamestaja;
             tbKupac.DataContext = prodajaNamestaja;
             cbUsluga.DataContext = prodajaNamestaja;
-            cbUsluga.ItemsSource = Projekat.Instance.dodatnaUsluga;
+        }
+
+        private ObservableCollection<DodatnaUsluga> filterActive(ObservableCollection<DodatnaUsluga> lista)
+        {
+            ObservableCollection<DodatnaUsluga> filteredList = new ObservableCollection<DodatnaUsluga>();
+            foreach (DodatnaUsluga dodatnaUsluga in lista)
+            {
+                if(dodatnaUsluga.Obrisan == false)
+                {
+                    filteredList.Add(dodatnaUsluga);
+                }
+            }
+            return filteredList;
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
@@ -58,7 +73,8 @@ namespace POP_SF_10_2016.UI
                 case Operacija.DODAVANJE:
 
                     prodajaNamestaja.Id = listaProdaje.Count + 1;
-                    listaProdaje.Add(prodajaNamestaja);
+                    prodajaNamestaja = ProdajaNamestaja.Create(prodajaNamestaja);
+                   // listaProdaje.Add(prodajaNamestaja);
                     break;
 
                 case Operacija.IZMENA:
@@ -70,8 +86,10 @@ namespace POP_SF_10_2016.UI
                             prodaja.DatumProdaje = prodajaNamestaja.DatumProdaje;
                             prodaja.BrojRacuna = prodajaNamestaja.BrojRacuna;
                             prodaja.Kupac = prodajaNamestaja.Kupac;
-                            prodaja.DodatnaUslugaId = prodajaNamestaja.DodatnaUslugaId;
+                            prodaja.DodatnaUsluga = prodajaNamestaja.DodatnaUsluga;
+                            prodaja.DodatnaUslugaID = prodajaNamestaja.DodatnaUslugaID;
                             prodaja.NamestajZaProdaju = prodajaNamestaja.NamestajZaProdaju;
+                            ProdajaNamestaja.Update(prodaja);
                             break;
                         }
                     }
@@ -80,7 +98,7 @@ namespace POP_SF_10_2016.UI
 
 
             }
-            GenericsSerializer.Serialize("prodajaNamestaja.xml", listaProdaje);
+          //  GenericsSerializer.Serialize("prodajaNamestaja.xml", listaProdaje);
 
             this.prodajaNamestaja.izracunajCenu();
             MessageBox.Show(this.prodajaNamestaja.UkupnaCena.ToString(), caption: "Ukupna Cena", button: MessageBoxButton.OK, icon: MessageBoxImage.Information);
@@ -142,7 +160,7 @@ namespace POP_SF_10_2016.UI
             }
             else
             {
-                // poruka da mora biti selektovan namestaj isto kao i za brisanje
+                MessageBox.Show($"Morate selektovati namestaj!","Obavestenje", MessageBoxButton.OK);
             }
             
         }

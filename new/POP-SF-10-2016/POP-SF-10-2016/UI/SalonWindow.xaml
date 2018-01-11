@@ -1,0 +1,29 @@
+﻿<Window x:Class="POP_SF_10_2016.UI.SalonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POP_SF_10_2016.UI"
+        mc:Ignorable="d"
+        Title="Salon" Height="331.395" Width="300">
+    <Grid>
+        <Label Content="Naziv" HorizontalAlignment="Left" Height="23" Margin="10,14,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Adrasa" HorizontalAlignment="Left" Height="23" Margin="10,42,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Telefon" HorizontalAlignment="Left" Height="23" Margin="10,76,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Email" HorizontalAlignment="Left" Height="23" Margin="10,104,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="WebSite" HorizontalAlignment="Left" Height="23" Margin="10,132,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Maticni broj" HorizontalAlignment="Left" Height="31" Margin="10,188,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Broj ziro Racuna" HorizontalAlignment="Left" Height="31" Margin="10,219,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label Content="PIB" HorizontalAlignment="Left" Height="23" Margin="10,160,0,0" VerticalAlignment="Top" Width="78"/>
+        <TextBox Name="txtNaziv" HorizontalAlignment="Left" Height="29" Margin="124,14,0,0" TextWrapping="Wrap" Text="{Binding Path=Naziv}" VerticalAlignment="Top" Width="128"/>
+        <TextBox Name="txtEmail" HorizontalAlignment="Left" Height="29" Margin="124,99,0,0" TextWrapping="Wrap" Text="{Binding Path=Email}" VerticalAlignment="Top" Width="128"/>
+        <TextBox Name="txtWebSite" HorizontalAlignment="Left" Height="29" Margin="124,128,0,0" TextWrapping="Wrap" Text="{Binding Path=WebSite}" VerticalAlignment="Top" Width="128"/>
+        <TextBox Name="txtPIB" HorizontalAlignment="Left" Height="29" Margin="124,157,0,0" TextWrapping="Wrap" Text="{Binding Path=PIB}" VerticalAlignment="Top" Width="128"/>
+        <TextBox Name="txtMaticni" HorizontalAlignment="Left" Height="29" Margin="124,183,0,0" TextWrapping="Wrap" Text="{Binding Path=MaticniBroj}" VerticalAlignment="Top" Width="128"/>
+        <TextBox Name="txtBrojZiroRacuna" HorizontalAlignment="Left" Height="29" Margin="124,212,0,0" TextWrapping="Wrap" Text="{Binding Path=BrojZiroRacuna}" VerticalAlignment="Top" Width="128"/>
+        <TextBox Name="txtAdresa" HorizontalAlignment="Left" Height="29" Margin="124,41,0,0" TextWrapping="Wrap" Text="{Binding Path=Adresa}"  VerticalAlignment="Top" Width="128"/>
+        <TextBox Name="txtTelefon" HorizontalAlignment="Left" Height="29" Margin="124,70,0,0" TextWrapping="Wrap" Text="{Binding Path=Telefon}" VerticalAlignment="Top" Width="128"/>
+        <Button Content="Cancel" Name="btnCancel" Click="btnCancel_Click" HorizontalAlignment="Left" Height="19" Margin="201,271,0,0" VerticalAlignment="Top" Width="65"/>
+
+    </Grid>
+</Window>

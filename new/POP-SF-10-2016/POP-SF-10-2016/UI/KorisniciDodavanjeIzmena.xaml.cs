@@ -62,28 +62,29 @@ namespace POP_SF_10_2016.UI
             {
                 case Operacija.DODAVANJE:
                     korisnik.Id = listaKorisnika.Count + 1;
-                    
-                    listaKorisnika.Add(korisnik);
+                    korisnik = Korisnik.Create(korisnik);
+                   // listaKorisnika.Add(korisnik);
                     break;
 
                 case Operacija.IZMENA:
                     foreach (var kor in listaKorisnika)
                     {
                         if (kor.Id == korisnik.Id)
-                        {
+                        { 
                             kor.Ime = korisnik.Ime;
                             kor.Prezime = korisnik.Prezime;
                             kor.KorisnickoIme = korisnik.KorisnickoIme;
                             kor.Lozinka = korisnik.Lozinka;
                             kor.TipKorisnika = korisnik.TipKorisnika;
+                            Korisnik.Update(kor);
                             break;
                         }
 
                     }
                     break;
             }
-            GenericsSerializer.Serialize("korisnik.xml", listaKorisnika);
-            Close();
+           // GenericsSerializer.Serialize("korisnik.xml", listaKorisnika);
+            this.Close();
         }
     }
 }

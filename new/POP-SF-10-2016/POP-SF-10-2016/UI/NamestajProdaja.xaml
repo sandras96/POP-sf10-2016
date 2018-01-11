@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="NamestajProdaja" Height="300" Width="374">
+        Title="Namestaj za prodaju" Height="300" Width="374">
     <Grid HorizontalAlignment="Left" Width="189">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -21,9 +21,10 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Content="Ponisti" Name="Ponisti" Click="Ponisti_Click" HorizontalAlignment="Left" Height="21" Margin="255,230,-141,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
-        <Button Content="Dodaj" Name="Dodaj" Click="Dodaj_Click" HorizontalAlignment="Left" Margin="25,230,0,0" Height="21"  VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
-        <ComboBox Name="cmbKolicina" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="120,229,-51,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Ponisti" Name="Ponisti" Click="Ponisti_Click" HorizontalAlignment="Left" Height="21" Margin="274,229,-160,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Button Content="Dodaj" Name="Dodaj" Click="Dodaj_Click" HorizontalAlignment="Left" Margin="22,230,0,0" Height="21"  VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <ComboBox Name="cmbKolicina" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="199,229,-59,0" VerticalAlignment="Top" Width="49"/>
+        <Label Grid.ColumnSpan="2" Content="Kolicina:" HorizontalAlignment="Left" Height="33" Margin="135,226,-5,0" VerticalAlignment="Top" Width="59" RenderTransformOrigin="0.475,0.788"/>
 
     </Grid>
 </Window>

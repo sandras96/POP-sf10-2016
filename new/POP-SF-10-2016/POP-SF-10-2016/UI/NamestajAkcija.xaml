@@ -1,0 +1,22 @@
+﻿<Window x:Class="POP_SF_10_2016.UI.NamestajAkcija"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POP_SF_10_2016.UI"
+        mc:Ignorable="d"
+        Title="Namestaj za akciju" Height="285" Width="421">
+    <Grid Margin="0,0,2,-2">
+        <DataGrid AutoGenerateColumns="False" Name="dgNamestaj" Height="192" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="*" Binding="{Binding Naziv}"/>
+                <DataGridTextColumn Header="Jedinicna cena" Width="*" Binding="{Binding JedinicnaCena}"/>
+                <DataGridTextColumn Header="Kolicina" Width="*" Binding="{Binding Kolicina}"/>
+                <DataGridTextColumn Header="Tip namestaja" Width="*" Binding="{Binding TipNamestaja}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Dodaj" Name="btnDodaj" Click="btnDodaj_Click" HorizontalAlignment="Left" Height="20" Margin="36,221,0,0" VerticalAlignment="Top" Width="69"/>
+        <Button Content="Ponisti" Name="btnPonisti" Click="btnPonisti_Click" HorizontalAlignment="Left" Height="20" Margin="289,221,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="ProdajaDodavanjeIzmena" Height="452" Width="454">
-    <Grid HorizontalAlignment="Right" Width="446" Margin="0,0,0,-6">
-        <Label Content="Datum" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="76"/>
-        <Label Content="Broj racuna" HorizontalAlignment="Left" Height="23" Margin="10,47,0,0" VerticalAlignment="Top" Width="76"/>
-        <Label Content="Kupac" HorizontalAlignment="Left" Height="23" Margin="10,95,0,0" VerticalAlignment="Top" Width="65"/>
+        Title="Prodaja dodavanje i izmena" Height="436" Width="449">
+    <Grid HorizontalAlignment="Right" Width="479" Margin="-5,10,-33,6">
+        <Label Content="Datum:" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label Content="Broj racuna:" HorizontalAlignment="Left" Height="23" Margin="10,47,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label Content="Kupac:" HorizontalAlignment="Left" Height="23" Margin="10,95,0,0" VerticalAlignment="Top" Width="65"/>
 
-        <TextBox HorizontalAlignment="Left" Name="tbKupac" Text="{Binding Path= Kupac}" Height="23" Margin="130,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
-        <TextBox HorizontalAlignment="Left" Name="tbBrRacuna" Text="{Binding Path= BrojRacuna}" Height="23" Margin="130,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
-        <DatePicker HorizontalAlignment="Left" Name="dpDatumProdaje" SelectedDate="{Binding Path= DatumProdaje}" Height="23" Margin="130,10,0,0" VerticalAlignment="Top" Width="114"/>
+        <TextBox HorizontalAlignment="Left" Name="tbKupac" Text="{Binding Path= Kupac}" Height="23" Margin="130,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox HorizontalAlignment="Left" Name="tbBrRacuna" Text="{Binding Path= BrojRacuna}" Height="23" Margin="130,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <DatePicker HorizontalAlignment="Left" Name="dpDatumProdaje" SelectedDate="{Binding Path= DatumProdaje}" Height="23" Margin="130,10,0,0" VerticalAlignment="Top" Width="140"/>
         <DataGrid HorizontalAlignment="Left" Name="dgPNamestaj" AutoGenerateColumns="False"  Height="97" Margin="5,214,0,0" VerticalAlignment="Top" Width="354">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="*" Binding="{Binding Naziv}"/>
@@ -24,11 +24,11 @@
 
         </DataGrid>
         <Button Content="+" Name="btnDodaj" Click="btnDodaj_Click" HorizontalAlignment="Left" Height="22" Margin="359,214,0,0" VerticalAlignment="Top" Width="38"/>
-        <Button Content="Ok" Name="btnOk" Click="btnOk_Click" HorizontalAlignment="Left" Height="27" Margin="15,390,0,0" VerticalAlignment="Top" Width="71"/>
+        <Button Content="Ok" Name="btnOk" Click="btnOk_Click" HorizontalAlignment="Left" Height="27" Margin="5,347,0,0" VerticalAlignment="Top" Width="71"/>
         <ComboBox Name="cbUsluga" SelectedItem="{Binding Path=DodatnaUsluga}" HorizontalAlignment="Left" Height="23" Margin="130,156,0,0" VerticalAlignment="Top" Width="140"/>
-        <Label Content="Dodatna usluga"  HorizontalAlignment="Left" Height="32" Margin="10,156,0,0" VerticalAlignment="Top" Width="108"/>
-        <Button Content="-" Name="btnUkloni" Click="btnUkloni_Click" HorizontalAlignment="Left" Height="27" Margin="357,236,0,0" VerticalAlignment="Top" Width="40"/>
-        <Button Content="Ponisti" Name="btnPonisti" Click="btnPonisti_Click" HorizontalAlignment="Left" Height="27" Margin="335,390,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Dodatna usluga" HorizontalAlignment="Left" Height="32" Margin="10,156,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button Content="-" Name="btnUkloni" Click="btnUkloni_Click" HorizontalAlignment="Left" Height="22" Margin="359,236,0,0" VerticalAlignment="Top" Width="38"/>
+        <Button Content="Ponisti" Name="btnPonisti" Click="btnPonisti_Click" HorizontalAlignment="Left" Height="27" Margin="327,338,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

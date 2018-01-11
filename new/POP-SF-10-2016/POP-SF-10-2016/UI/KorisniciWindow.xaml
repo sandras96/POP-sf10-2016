@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="KorisniciWindow" Height="435.917" Width="429">
-    <Grid Margin="0,0,0,-1" HorizontalAlignment="Left" Width="419">
-        <DataGrid Grid.Row="0" FontSize="12" Name="dgKorisnik" AutoGenerateColumns="False"  Margin="0,122,-6,60" RenderTransformOrigin="0.487,0.453" HorizontalAlignment="Left" Width="425">
+        Title="Korisnici" Height="452.917" Width="480">
+    <Grid Margin="0" HorizontalAlignment="Left" Width="470">
+        <DataGrid Grid.Row="0" FontSize="12" Name="dgKorisnik" AutoGenerateColumns="False"  Margin="0,122,0,74" RenderTransformOrigin="0.487,0.453" HorizontalAlignment="Left" Width="470">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" Width="*"/>
                 <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="*"/>
@@ -16,10 +16,10 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Izlaz" Click="Izlaz" HorizontalAlignment="Left" Height="24" Margin="365,373,-6,-26" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.517,3.208"/>
-        <Button Content="Obrisi" Click="Obrisi" HorizontalAlignment="Left" Height="24" Margin="171,373,0,-26" VerticalAlignment="Top" Width="60"/>
-        <Button Content="Izmeni" Click="Izmeni" HorizontalAlignment="Left" Height="24" Margin="89,373,0,-26" VerticalAlignment="Top" Width="60"/>
-        <Button Content="Dodaj" Click="Dodaj" HorizontalAlignment="Left" Height="24" Margin="8,373,0,-27" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.581,2.251">
+        <Button Content="Ponisti" Click="Izlaz" HorizontalAlignment="Left" Height="24" Margin="393,372,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.517,3.208"/>
+        <Button Content="Obrisi" Click="Obrisi" HorizontalAlignment="Left" Height="24" Margin="171,373,0,0" VerticalAlignment="Top" Width="77"/>
+        <Button Content="Izmeni" Click="Izmeni" HorizontalAlignment="Left" Height="24" Margin="89,373,0,0" VerticalAlignment="Top" Width="77"/>
+        <Button Content="Dodaj" Click="Dodaj" HorizontalAlignment="Left" Height="24" Margin="8,373,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.581,2.251">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -29,13 +29,16 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <ComboBox Name="cbStatus" HorizontalAlignment="Left" Height="23" Margin="253,373,0,-25" VerticalAlignment="Top" Width="95" SelectionChanged="cbStatus_SelectionChanged" RenderTransformOrigin="0.225,2.625"/>
-        <ComboBox Name="cbSort" HorizontalAlignment="Left" Height="29" Margin="171,10,0,0" VerticalAlignment="Top" Width="148">
+        <ComboBox Name="cbStatus" HorizontalAlignment="Left" Height="24" Margin="253,373,0,-25" VerticalAlignment="Top" Width="135" SelectionChanged="cbStatus_SelectionChanged" RenderTransformOrigin="0.225,2.625"/>
+        <ComboBox Name="cbSort" HorizontalAlignment="Left" Height="24" Margin="134,15,0,0" VerticalAlignment="Top" Width="185">
             <ComboBoxItem Content="Ime"/>
             <ComboBoxItem Content="Prezime"/>
         </ComboBox>
-        <Button Content="Sort" Name="btnSort" Click="btnSort_Click" HorizontalAlignment="Left" Height="23" Margin="333,16,0,0" VerticalAlignment="Top" Width="65"/>
-        <Label Content="Sortiraj po:" HorizontalAlignment="Left" Height="33" Margin="75,15,0,0" VerticalAlignment="Top" Width="91"/>
+        <Button Content="Sort" Name="btnSort" Click="btnSort_Click" HorizontalAlignment="Left" Height="24" Margin="333,16,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="Sortiraj po:" HorizontalAlignment="Left" Height="33" Margin="10,15,0,0" VerticalAlignment="Top" Width="97"/>
+        <TextBox Name="txtSearch" HorizontalAlignment="Left" Height="24" Margin="134,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <Button Content="Search" Name="btnSearch" Click="btnSearch_Click" HorizontalAlignment="Left" Height="24" Margin="333,64,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="Pretrazi:" HorizontalAlignment="Left" Height="23" Margin="10,65,0,0" VerticalAlignment="Top" Width="97"/>
 
 
     </Grid>

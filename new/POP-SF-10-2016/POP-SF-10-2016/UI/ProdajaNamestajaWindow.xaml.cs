@@ -128,6 +128,37 @@ namespace POP_SF_10_2016.UI
                 view.Filter = FilterNeobrisan;
             }
         }
-    } }
+
+        private void btnSort_Click(object sender, RoutedEventArgs e)
+        {
+            ICollectionView view = CollectionViewSource.GetDefaultView(dgProdajaNamestaja.ItemsSource);
+
+            if (cbSort.SelectedIndex == 0)
+            {
+                dgProdajaNamestaja.Items.SortDescriptions.Clear();
+                dgProdajaNamestaja.Items.SortDescriptions.Add(new SortDescription("Kupac", ListSortDirection.Ascending));
+            }
+            else if (cbSort.SelectedIndex == 1)
+            {
+                dgProdajaNamestaja.Items.SortDescriptions.Clear();
+                dgProdajaNamestaja.Items.SortDescriptions.Add(new SortDescription("BrojRacuna", ListSortDirection.Ascending));
+            }
+            else if (cbSort.SelectedIndex == 2)
+            {
+                dgProdajaNamestaja.Items.SortDescriptions.Clear();
+                dgProdajaNamestaja.Items.SortDescriptions.Add(new SortDescription("DatumProdaje", ListSortDirection.Ascending));
+            }
+        }
+
+        private void btnPretraga_Click(object sender, RoutedEventArgs e)
+        {
+            var param = txtPretraga.Text;
+
+            dgProdajaNamestaja.ItemsSource = ProdajaNamestaja.GetSearch(param);
+        }
+
+
+    }
+}
     
     

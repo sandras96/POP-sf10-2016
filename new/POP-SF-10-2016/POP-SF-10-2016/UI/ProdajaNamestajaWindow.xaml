@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="ProdajaNamestajaWindow" Height="300" Width="429">
-    <Grid Margin="0,0,2,-3">
+        Title="Prodaja namestaja" Height="379" Width="531">
+    <Grid Margin="0,0,-24,-3" HorizontalAlignment="Left" Width="576">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="105*"/>
             <ColumnDefinition Width="105*"/>
@@ -15,7 +15,7 @@
             <ColumnDefinition Width="24*"/>
 
         </Grid.ColumnDefinitions>
-        <DataGrid Name="dgProdajaNamestaja" Height="185" Margin="1,0,-36,87" AutoGenerateColumns="False" SelectedItem="{Binding Path=selektovanaProdaja}"  VerticalAlignment="Bottom" Grid.ColumnSpan="5" HorizontalAlignment="Left" Width="419" >
+        <DataGrid Name="dgProdajaNamestaja" Height="185" Margin="0,0,0,51" AutoGenerateColumns="False" VerticalAlignment="Bottom" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="518" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Datum prodaje" Width="*" Binding="{Binding DatumProdaje}"/>
                 <DataGridTextColumn Header="Broj racuna" Width="*" Binding="{Binding BrojRacuna}"/>
@@ -24,10 +24,20 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Content="Dodavanje" Name="Dodavanje"  Click="Dodavanje_Click" Height="23" Margin="10,225,2.545,0" VerticalAlignment="Top" Width="83"/>
-        <Button Content="Izmena" Name="Izmena" Click="Izmena_Click" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10.455,225,0,0" VerticalAlignment="Top" Width="83"/>
-        <Button Content="Ponisti" Name="Ponisti" Click="Ponisti_Click" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="16,225,0,0" VerticalAlignment="Top" Width="83" Grid.ColumnSpan="2"/>
-        <Button Content="Brisanje" Name="Brisanje" Click="Brisanje_Click" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.909,225,0,0" VerticalAlignment="Top" Width="83" Grid.ColumnSpan="2"/>
-        <ComboBox Name="cbStatus" SelectionChanged="cbStatus_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="51,190,0,0" VerticalAlignment="Top" Width="143"/>
-    </Grid> 
+        <Button Content="Dodavanje" Name="Dodavanje"  Click="Dodavanje_Click" Height="23" Margin="0,318,63,0" VerticalAlignment="Top" Width="83"/>
+        <Button Content="Izmena" Name="Izmena" Click="Izmena_Click" HorizontalAlignment="Left" Height="23" Margin="98,318,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.518,4.478" Grid.ColumnSpan="2"/>
+        <Button Content="Ponisti" Name="Ponisti" Click="Ponisti_Click" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="10,318,0,0" VerticalAlignment="Top" Width="83"/>
+        <Button Content="Brisanje" Name="Brisanje" Click="Brisanje_Click" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="51,318,0,0" VerticalAlignment="Top" Width="83" Grid.ColumnSpan="2"/>
+        <ComboBox Name="cbStatus" SelectionChanged="cbStatus_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="54,318,0,0" VerticalAlignment="Top" Width="130"/>
+        <ComboBox Name="cbSort"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="24" Margin="0,20,0,0" VerticalAlignment="Top" Width="176" Grid.Column="1">
+            <ComboBoxItem Content="Kupac"/>
+            <ComboBoxItem Content="Broj Racuna"/>
+            <ComboBoxItem Content="Datum"/>
+        </ComboBox>
+        <Button Content="Sort" Name="btnSort" Click="btnSort_Click" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="51,20,0,0" VerticalAlignment="Top" Width="54"/>
+        <TextBox Name="txtPretraga" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="0,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+        <Button Content="Pretrazi" Name="btnPretraga" Click="btnPretraga_Click" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="51,61,0,0" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Sortiraj po:" HorizontalAlignment="Left" Height="24" Margin="10,20,0,0" VerticalAlignment="Top" Width="106"/>
+        <Label Content="Pretrazi:" HorizontalAlignment="Left" Height="24" Margin="10,61,0,0" VerticalAlignment="Top" Width="90"/>
+    </Grid>
 </Window>

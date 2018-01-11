@@ -35,7 +35,7 @@ namespace POP_SF_10_2016.UI
 
         public NamestajWindow()
         {
-           InitializeComponent();
+            InitializeComponent();
 
             view = CollectionViewSource.GetDefaultView(Projekat.Instance.namestaj);
             view.Filter = FilterNeobrisan;
@@ -93,30 +93,30 @@ namespace POP_SF_10_2016.UI
                     if (n.Id == nam.Id)
                     {
                         n.Obrisan = true;
-                        
-                        break;
-                    }
-                
-                
-            }
-         /*   public void Brisanje(object sender, RoutedEventArgs e)
-        {
-            Namestaj selektovaniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
 
-            if (MessageBox.Show(messageBoxText: $"Da li ste sigurni da zelite da obrisete{selektovaniNamestaj.Naziv}?", caption: "Brisanje", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Question) == MessageBoxResult.Yes)
-            {
-                
-                foreach (var nam in Projekat.Instance.namestaj)
-                {
-                    if (nam.Id == selektovaniNamestaj.Id)
-                    {
-                        nam.Obrisan = true;
-                       // view.Filter = Filter;
                         break;
                     }
-                }*/
-             GenericsSerializer.Serialize("namestaj.xml", Projekat.Instance.namestaj);
-             view.Refresh();
+
+
+                }
+                /*   public void Brisanje(object sender, RoutedEventArgs e)
+               {
+                   Namestaj selektovaniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
+
+                   if (MessageBox.Show(messageBoxText: $"Da li ste sigurni da zelite da obrisete{selektovaniNamestaj.Naziv}?", caption: "Brisanje", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Question) == MessageBoxResult.Yes)
+                   {
+
+                       foreach (var nam in Projekat.Instance.namestaj)
+                       {
+                           if (nam.Id == selektovaniNamestaj.Id)
+                           {
+                               nam.Obrisan = true;
+                              // view.Filter = Filter;
+                               break;
+                           }
+                       }*/
+                GenericsSerializer.Serialize("namestaj.xml", Projekat.Instance.namestaj);
+                view.Refresh();
             }
         }
 
@@ -145,7 +145,7 @@ namespace POP_SF_10_2016.UI
             else if (cbSort.SelectedIndex == 1)
             {
                 dgNamestaj.Items.SortDescriptions.Clear();
-                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("TipNID", ListSortDirection.Ascending));
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("TipNamestaja.Naziv", ListSortDirection.Ascending));
             }
             else if (cbSort.SelectedIndex == 2)
             {
@@ -154,18 +154,11 @@ namespace POP_SF_10_2016.UI
             }
         }
 
-        private bool NamestajFilter(object obj)
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(tbPretraga.Text))
-                return true;
+            var param = tbPretraga.Text;
 
-            var namestaj = (Namestaj)obj;
-
-            return (namestaj.Naziv.StartsWith(tbPretraga.Text, StringComparison.OrdinalIgnoreCase) || namestaj.TipNamestaja.Naziv.StartsWith(tbPretraga.Text, StringComparison.OrdinalIgnoreCase));
-        }
-        private void tbPretraga_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //CollectionViewSource.GetDefaultView(dgNamestaj.ItemsSource).Refresh();
+            dgNamestaj.ItemsSource = Namestaj.GetSearch(param);
         }
     }
     

@@ -132,6 +132,13 @@ namespace POP_SF_10_2016.UI
                 dgKorisnik.Items.SortDescriptions.Add(new SortDescription("Prezime", ListSortDirection.Ascending));
             }
         }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            var param = txtSearch.Text;
+
+            dgKorisnik.ItemsSource = Korisnik.GetSearch(param);
+        }
     }
 }
 

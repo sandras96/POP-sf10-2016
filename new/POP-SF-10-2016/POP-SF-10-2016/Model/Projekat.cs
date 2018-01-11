@@ -21,18 +21,24 @@ namespace POP_10.Model
         public ObservableCollection<ProdajaNamestaja> prodajaNamestaja;
         public ObservableCollection<DodatnaUsluga> dodatnaUsluga;
         public ObservableCollection<Akcija> akcija;
-      
+        public Salon salon;
         public Korisnik ulogovanKorisnik { get; set; }
 
         private Projekat()
         {
-           //tipNam = TipNamestaja.GetAll();
-             namestaj = new ObservableCollection<Namestaj>(GenericsSerializer.Deserialize<Namestaj>("namestaj.xml"));
-             korisnik = new ObservableCollection<Korisnik>(GenericsSerializer.Deserialize<Korisnik>("korisnik.xml"));
-             tipNam = new ObservableCollection<TipNamestaja>(GenericsSerializer.Deserialize<TipNamestaja>("tipNamestaja.xml"));
-             prodajaNamestaja = new ObservableCollection<ProdajaNamestaja>(GenericsSerializer.Deserialize<ProdajaNamestaja>("prodajaNamestaja.xml"));
-             dodatnaUsluga = new ObservableCollection<DodatnaUsluga>(GenericsSerializer.Deserialize<DodatnaUsluga>("dodatnaUsluga.xml"));
-            akcija = new ObservableCollection<Akcija>(GenericsSerializer.Deserialize<Akcija>("akcija.xml"));
+            tipNam = TipNamestaja.GetAll();
+            namestaj = Namestaj.GetAll();
+            dodatnaUsluga = DodatnaUsluga.GetAll();
+            korisnik = Korisnik.GetAll();
+            prodajaNamestaja = ProdajaNamestaja.GetAll();
+            akcija = Akcija.GetAll();
+            salon = Salon.GetAll();
+            //namestaj = new ObservableCollection<Namestaj>(GenericsSerializer.Deserialize<Namestaj>("namestaj.xml"));
+            //korisnik = new ObservableCollection<Korisnik>(GenericsSerializer.Deserialize<Korisnik>("korisnik.xml"));
+            // tipNam = new ObservableCollection<TipNamestaja>(GenericsSerializer.Deserialize<TipNamestaja>("tipNamestaja.xml"));
+            //prodajaNamestaja = new ObservableCollection<ProdajaNamestaja>(GenericsSerializer.Deserialize<ProdajaNamestaja>("prodajaNamestaja.xml"));
+            // dodatnaUsluga = new ObservableCollection<DodatnaUsluga>(GenericsSerializer.Deserialize<DodatnaUsluga>("dodatnaUsluga.xml"));
+            //akcija = new ObservableCollection<Akcija>(GenericsSerializer.Deserialize<Akcija>("akcija.xml"));
         }
     }
 }

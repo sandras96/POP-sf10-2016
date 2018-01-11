@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="AkcijaDodavanjeIzmena" Height="300" Width="422.093">
-    <Grid Margin="0,0,2,0">
-        <Label Content="Pocetak" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="58"/>
-        <Label Content="Kraj" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.48,2.334"/>
-        <Label Content="Popust" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.48,2.334"/>
+        Title="Akcija dodavanje i izmena" Height="305.976" Width="370.698">
+    <Grid Margin="0,0,2,8">
+        <Label Content="Pocetak:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label Content="Kraj:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.48,2.334"/>
+        <Label Content="Popust:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.48,2.334"/>
         <Label Content="Namestaj na Akciji" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.48,2.334"/>
         <DatePicker HorizontalAlignment="Left" Name="dpPocetak" SelectedDate="{Binding Path= Pocetak}" Margin="113,10,0,0" VerticalAlignment="Top" Width="140"/>
         <DatePicker HorizontalAlignment="Left" Name="dpKraj" SelectedDate="{Binding Path= Kraj}" Margin="113,41,0,0" VerticalAlignment="Top" Width="140"/>
@@ -22,9 +22,10 @@
                 <DataGridTextColumn Header="Kolicina" Width="*" Binding="{Binding Kolicina}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Ok" Name="btnOk" Click="btnOk_Click" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="+" Name="btnDodaj" Click="btnDodaj_Click" HorizontalAlignment="Left" Height="29" Margin="345,129,0,0" VerticalAlignment="Top" Width="57"/>
-        <Button Content="Ponisti" Name="btnPonisti" Click="btnPonisti_Click" HorizontalAlignment="Left" Height="20" Margin="297,239,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button Content="Cancel" Name="btnPonisti" Click="btnPonisti_Click" HorizontalAlignment="Left" Height="20" Margin="247,239,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button Content="+" Name="btnDodaj" Click="btnDodaj_Click_1" HorizontalAlignment="Left" Margin="327,132,0,0" VerticalAlignment="Top" Width="31"/>
+        <Button Content="-" Name="btnUkloni" Click="btnUkloni_Click"  HorizontalAlignment="Left" Margin="327,152,0,0" VerticalAlignment="Top" Width="31"/>
+        <Button Content="Ok" Name="btnOk" Click="btnOk_Click_1" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

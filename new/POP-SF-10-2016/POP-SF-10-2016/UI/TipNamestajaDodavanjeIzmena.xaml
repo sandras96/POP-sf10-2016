@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="TipNamestajaDodavanjeIzmena" Height="300" Width="300">
+        Title="Tip namestaja dodavanje izmena" Height="300" Width="300">
     <Grid>
         <Label Content="Naziv:" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" VerticalAlignment="Top" Width="97"/>
-        <TextBox Name="tbNaziv" HorizontalAlignment="Left" Height="33" Margin="107,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding Path=Naziv}" Width="126"/>
+        <TextBox Name="tbNaziv" HorizontalAlignment="Left" Height="28" Margin="107,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding Path=Naziv}" Width="145"/>
         <CheckBox Name="cbObrisan" Content="Obrisan" HorizontalAlignment="Left" Height="34" Margin="80,94,0,0" IsChecked="{Binding Path=Obrisan}" VerticalAlignment="Top" Width="83"/>
-        <Button Content="Potvrdi" Name="Potvrdi" Click="Potvrdi_Click" HorizontalAlignment="Left" Height="24" Margin="40,220,0,0" VerticalAlignment="Top" Width="89"/>
-        <Button Content="Odustani" Name="Odustani" Click="Odustani_Click"  HorizontalAlignment="Left" Height="24" Margin="163,220,0,0" VerticalAlignment="Top" Width="97"/>
+        <Button Content="Ok" Name="Potvrdi" Click="Potvrdi_Click" HorizontalAlignment="Left" Height="24" Margin="40,220,0,0" VerticalAlignment="Top" Width="89"/>
+        <Button Content="Cancel" Name="Odustani" Click="Odustani_Click"  HorizontalAlignment="Left" Height="24" Margin="163,220,0,0" VerticalAlignment="Top" Width="89"/>
         
 
     </Grid>

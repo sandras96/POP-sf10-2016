@@ -1,6 +1,7 @@
 ﻿using POP_10.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -84,6 +85,14 @@ namespace POP_SF_10_2016.UI
             if (MessageBox.Show($"Da li ste sigurni da zelite da izbrisete izabrani namestaj: {selektovaniTipNamestaja.Naziv}?", "Poruka o brisanju ", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 selektovaniTipNamestaja.Obrisan = true;
+                ObservableCollection<Namestaj> namestaj = Namestaj.GetByTipNamestaja(selektovaniTipNamestaja);
+                foreach(Namestaj nam in namestaj)
+                {
+                    nam.Obrisan = true;
+                    Namestaj.Update(nam);
+                }
+                TipNamestaja.Update(selektovaniTipNamestaja);
+                
             }
             view.Refresh();
         }

@@ -61,7 +61,8 @@ namespace POP_SF_10_2016.UI
                     var obrisan = false;
                     tipNamestaja.Id = Id;
                     tipNamestaja.Obrisan = obrisan;
-                    postojeciTipNamestaja.Add(tipNamestaja);
+                    tipNamestaja = TipNamestaja.Create(tipNamestaja);
+                   // postojeciTipNamestaja.Add(tipNamestaja);
 
                     break;
 
@@ -72,13 +73,13 @@ namespace POP_SF_10_2016.UI
                         {
                             n.Naziv = tipNamestaja.Naziv;
                             n.Obrisan = tipNamestaja.Obrisan;
-                           
+                            TipNamestaja.Update(n);
                             break;
                         }
                     }
                     break;
             }
-            GenericsSerializer.Serialize("tipNamestaja.xml", postojeciTipNamestaja);
+           // GenericsSerializer.Serialize("tipNamestaja.xml", postojeciTipNamestaja);
             this.Close();
         }
 

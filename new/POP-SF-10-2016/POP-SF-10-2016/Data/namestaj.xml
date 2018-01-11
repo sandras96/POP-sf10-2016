@@ -3,91 +3,46 @@
   <Namestaj>
     <akcija>0</akcija>
     <Id>1</Id>
-    <Naziv>Kuhinjska stolica</Naziv>
-    <JedinicnaCena>1700</JedinicnaCena>
-    <Kolicina>30</Kolicina>
-    <Obrisan>false</Obrisan>
-    <TipNID>4</TipNID>
-  </Namestaj>
-  <Namestaj>
-    <akcija>0</akcija>
-    <Id>2</Id>
-    <Naziv>Bracni krevet</Naziv>
-    <JedinicnaCena>25000</JedinicnaCena>
-    <Kolicina>300</Kolicina>
+    <Naziv>Francuski krevet</Naziv>
+    <JedinicnaCena>20000</JedinicnaCena>
+    <Kolicina>22</Kolicina>
     <Obrisan>false</Obrisan>
     <TipNID>1</TipNID>
   </Namestaj>
   <Namestaj>
     <akcija>0</akcija>
-    <Id>3</Id>
-    <Naziv>Sofa</Naziv>
-    <JedinicnaCena>9000</JedinicnaCena>
-    <Kolicina>50</Kolicina>
+    <Id>2</Id>
+    <Naziv>Trpezarijski sto</Naziv>
+    <JedinicnaCena>9500</JedinicnaCena>
+    <Kolicina>15</Kolicina>
     <Obrisan>false</Obrisan>
     <TipNID>2</TipNID>
   </Namestaj>
   <Namestaj>
     <akcija>0</akcija>
-    <Id>4</Id>
-    <Naziv>Dvorisni sto</Naziv>
-    <JedinicnaCena>4500</JedinicnaCena>
-    <Kolicina>10</Kolicina>
-    <Obrisan>true</Obrisan>
-    <TipNID>3</TipNID>
+    <Id>3</Id>
+    <Naziv>Bastenski sto</Naziv>
+    <JedinicnaCena>750</JedinicnaCena>
+    <Kolicina>9</Kolicina>
+    <Obrisan>false</Obrisan>
+    <TipNID>2</TipNID>
   </Namestaj>
   <Namestaj>
     <akcija>0</akcija>
     <Id>5</Id>
-    <Naziv>Trpezarijski sto</Naziv>
-    <JedinicnaCena>10000</JedinicnaCena>
-    <Kolicina>10</Kolicina>
+    <Naziv>fds</Naziv>
+    <JedinicnaCena>4</JedinicnaCena>
+    <Kolicina>4</Kolicina>
     <Obrisan>false</Obrisan>
-    <TipNID>6</TipNID>
+    <TipNID>2</TipNID>
   </Namestaj>
   <Namestaj>
     <akcija>0</akcija>
     <Id>6</Id>
-    <Naziv>dfgdf</Naziv>
-    <JedinicnaCena>44</JedinicnaCena>
-    <Kolicina>4</Kolicina>
-    <Obrisan>true</Obrisan>
-    <TipNID>1</TipNID>
-  </Namestaj>
-  <Namestaj>
-    <akcija>0</akcija>
-    <Id>7</Id>
-    <Naziv>n123</Naziv>
-    <JedinicnaCena>450</JedinicnaCena>
-    <Kolicina>5</Kolicina>
-    <Obrisan>true</Obrisan>
-    <TipNID>6</TipNID>
-  </Namestaj>
-  <Namestaj>
-    <akcija>0</akcija>
-    <Id>8</Id>
-    <Naziv>xvdv</Naziv>
-    <JedinicnaCena>66</JedinicnaCena>
+    <Naziv>asdasd</Naziv>
+    <JedinicnaCena>444</JedinicnaCena>
     <Kolicina>6</Kolicina>
     <Obrisan>true</Obrisan>
-    <TipNID>1</TipNID>
-  </Namestaj>
-  <Namestaj>
-    <akcija>0</akcija>
-    <Id>9</Id>
-    <Naziv>esfds</Naziv>
-    <JedinicnaCena>6757</JedinicnaCena>
-    <Kolicina>76</Kolicina>
-    <Obrisan>true</Obrisan>
-    <TipNID>6</TipNID>
-  </Namestaj>
-  <Namestaj>
-    <akcija>0</akcija>
-    <Id>10</Id>
-    <Naziv>ssfsd</Naziv>
-    <JedinicnaCena>6</JedinicnaCena>
-    <Kolicina>6</Kolicina>
-    <Obrisan>false</Obrisan>
-    <TipNID>6</TipNID>
+    <TipNID>3</TipNID>
   </Namestaj>
 </ArrayOfNamestaj>

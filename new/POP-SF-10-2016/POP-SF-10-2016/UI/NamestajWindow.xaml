@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="Namestaj" Height="396" Width="572">
-    <Grid Margin="0,0,0,2">
+        Title="Namestaj" Height="410" Width="502">
+    <Grid Margin="0,0,-62,-3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="197*"/>
             <ColumnDefinition Width="153*"/>
@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <DataGrid AutoGenerateColumns="False" Name="dgNamestaj" Height="165" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="0,134,0,0" >
+        <DataGrid AutoGenerateColumns="False" Name="dgNamestaj" Height="165" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="0,134,78,0" RenderTransformOrigin="1.172,0.503" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="*" Binding="{Binding Naziv}"/>
                 <DataGridTextColumn Header="JedinicnaCena" Width="*" Binding="{Binding JedinicnaCena}"/>
@@ -22,18 +22,20 @@
                 <DataGridTextColumn Header="Tip namestaja" Width="*" Binding="{Binding TipNamestaja}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Dodavanje" HorizontalAlignment="Left" Height="21" Margin="24,332,0,0" Click="Dodavanje" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Izmena" Click="Izmena" HorizontalAlignment="Left" Height="21" Margin="120,332,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button Content="Brisanje" Click="Brisanje" HorizontalAlignment="Left" Height="21" Margin="21,332,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="2.1,1.556" Grid.Column="1"/>
-        <Button Content="Ponisti" Click="Ponisti" HorizontalAlignment="Left" Height="21" Margin="104,332,0,0" VerticalAlignment="Top" Width="67" Grid.Column="2"/>
-        <ComboBox Name="cbStatus" HorizontalAlignment="Left" Height="21" Margin="110,332,0,0" VerticalAlignment="Top" Width="117" SelectionChanged="cbStatus_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <ComboBox Name="cbSort" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="182">
+        <Button Content="Dodavanje" HorizontalAlignment="Left" Height="21" Margin="10,332,0,0" Click="Dodavanje" VerticalAlignment="Top" Width="67"/>
+        <Button Content="Izmena" Click="Izmena" HorizontalAlignment="Left" Height="21" Margin="92,332,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button Content="Brisanje" Click="Brisanje" HorizontalAlignment="Left" Height="21" Margin="178,332,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="2.1,1.556" Grid.ColumnSpan="2"/>
+        <Button Content="Ponisti" Click="Ponisti" HorizontalAlignment="Left" Height="21" Margin="52,332,0,0" VerticalAlignment="Top" Width="67" Grid.Column="2"/>
+        <ComboBox Name="cbStatus" HorizontalAlignment="Left" Height="21" Margin="68,332,0,0" VerticalAlignment="Top" Width="117" SelectionChanged="cbStatus_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <ComboBox Name="cbSort" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="24" Margin="120,11,0,0" VerticalAlignment="Top" Width="185">
             <ComboBoxItem Content="Naziv"/>
             <ComboBoxItem Content="Tip Namestaja"/>
             <ComboBoxItem Content="Cena"/>
         </ComboBox>
-        <Button Content="Sort" Name="Sort" Click="Sort_Click" Grid.Column="2" HorizontalAlignment="Left" Height="29" Margin="74,10,0,0" VerticalAlignment="Top" Width="97"/>
-        <Label  Content="Sortiraj po:" HorizontalAlignment="Left" Height="29" Margin="123,10,0,0" VerticalAlignment="Top" Width="74"/>
-        <TextBox Name="tbPretraga" TextChanged="tbPretraga_TextChanged" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="10,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="182"/>
+        <Button Content="Sort" Name="Sort" Click="Sort_Click" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="130,10,0,0" VerticalAlignment="Top" Width="55" Grid.ColumnSpan="2"/>
+        <Label  Content="Sortiraj po:" HorizontalAlignment="Left" Height="29" Margin="24,11,0,0" VerticalAlignment="Top" Width="74"/>
+        <TextBox Name="tbPretraga" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="24" Margin="120,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <Button Name="btnSearch" Content="Search" Grid.Column="1" HorizontalAlignment="Left" Margin="130,69,0,0" VerticalAlignment="Top" Width="55" Height="24" Click="btnSearch_Click" Grid.ColumnSpan="2"/>
+        <Label Content="Pretrazi:" HorizontalAlignment="Left" Height="29" Margin="24,69,0,0" VerticalAlignment="Top" Width="65"/>
     </Grid>
 </Window>

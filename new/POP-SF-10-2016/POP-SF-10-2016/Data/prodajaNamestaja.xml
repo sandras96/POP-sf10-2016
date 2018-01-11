@@ -7,5 +7,6 @@
     <Kupac>Sandra</Kupac>
     <UkupnaCena>0</UkupnaCena>
     <Obrisan>false</Obrisan>
+    <DodatnaUslugaID>0</DodatnaUslugaID>
   </ProdajaNamestaja>
 </ArrayOfProdajaNamestaja>

@@ -18,7 +18,7 @@
         <Label Content="Lozinka:" HorizontalAlignment="Left" Height="25" Margin="10,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="93"/>
         <TextBox Name="tbLoz"  HorizontalAlignment="Left" Height="27" Margin="126,56,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
         <Label Content="Dobro dosli u salon namestaja!" HorizontalAlignment="Left" Height="27" Margin="107,37,0,0" VerticalAlignment="Top" Width="177"/>
-        <Label Content="Molimo vas da unesete svoje podatke." HorizontalAlignment="Left" Height="31" Margin="94,64,0,0" VerticalAlignment="Top" Width="209" Grid.RowSpan="2"/>
+        <Label Content="Molimo Vas da unesete svoje podatke." HorizontalAlignment="Left" Height="31" Margin="94,64,0,0" VerticalAlignment="Top" Width="231" Grid.RowSpan="2"/>
         <Button Content="Potvrdi" HorizontalAlignment="Left" Height="25" Margin="30,27,0,0" Grid.Row="3" VerticalAlignment="Top" Width="104" Click="Potvrdi"/>
         <Button Content="Izlaz" HorizontalAlignment="Left" Height="25" Margin="253,27,0,0" Grid.Row="3" VerticalAlignment="Top" Width="104" Click="Izlaz"/>
     </Grid>

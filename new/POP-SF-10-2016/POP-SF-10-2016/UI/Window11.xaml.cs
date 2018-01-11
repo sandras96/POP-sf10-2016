@@ -38,7 +38,7 @@ namespace POP_SF_10_2016.UI
                 btnTipNamestaja.Visibility = Visibility.Hidden;
                 btnAkcija.Visibility = Visibility.Hidden;
                 btnDodatnaUsluga.Visibility = Visibility.Hidden;
-                
+                btnSalon.Visibility = Visibility.Hidden;
             
 
             }
@@ -100,7 +100,8 @@ namespace POP_SF_10_2016.UI
 
         private void btnSalon_Click(object sender, RoutedEventArgs e)
         {
-
+            SalonWindow sw = new SalonWindow(Projekat.Instance.salon);
+            sw.ShowDialog();
         }
     }
 }

@@ -2,9 +2,83 @@
 <ArrayOfAkcija xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Akcija>
     <Id>1</Id>
-    <Pocetak>0001-01-01T00:00:00</Pocetak>
-    <Kraj>0001-01-01T00:00:00</Kraj>
+    <Pocetak>2017-05-24T00:00:00</Pocetak>
+    <Kraj>2017-09-15T00:00:00</Kraj>
+    <Popust>50</Popust>
+    <Obrisan>false</Obrisan>
+    <NamestajNaAkciji>
+      <Namestaj>
+        <akcija>0</akcija>
+        <Id>1</Id>
+        <Naziv>Francuski krevet</Naziv>
+        <JedinicnaCena>20000</JedinicnaCena>
+        <Kolicina>22</Kolicina>
+        <Obrisan>false</Obrisan>
+        <TipNID>1</TipNID>
+      </Namestaj>
+      <Namestaj>
+        <akcija>0</akcija>
+        <Id>2</Id>
+        <Naziv>Trpezarijski sto</Naziv>
+        <JedinicnaCena>9500</JedinicnaCena>
+        <Kolicina>15</Kolicina>
+        <Obrisan>false</Obrisan>
+        <TipNID>2</TipNID>
+      </Namestaj>
+    </NamestajNaAkciji>
+  </Akcija>
+  <Akcija>
+    <Id>2</Id>
+    <Pocetak>2018-01-21T00:00:00</Pocetak>
+    <Kraj>2017-09-15T00:00:00</Kraj>
+    <Popust>70</Popust>
+    <Obrisan>false</Obrisan>
+    <NamestajNaAkciji>
+      <Namestaj>
+        <akcija>0</akcija>
+        <Id>2</Id>
+        <Naziv>Trpezarijski sto</Naziv>
+        <JedinicnaCena>9500</JedinicnaCena>
+        <Kolicina>15</Kolicina>
+        <Obrisan>false</Obrisan>
+        <TipNID>2</TipNID>
+      </Namestaj>
+      <Namestaj>
+        <akcija>0</akcija>
+        <Id>3</Id>
+        <Naziv>Bastenski sto</Naziv>
+        <JedinicnaCena>750</JedinicnaCena>
+        <Kolicina>9</Kolicina>
+        <Obrisan>false</Obrisan>
+        <TipNID>2</TipNID>
+      </Namestaj>
+    </NamestajNaAkciji>
+  </Akcija>
+  <Akcija>
+    <Id>3</Id>
+    <Pocetak>2018-01-11T00:00:00+01:00</Pocetak>
+    <Kraj>2018-01-11T00:00:00+01:00</Kraj>
     <Popust>0</Popust>
     <Obrisan>false</Obrisan>
+    <NamestajNaAkciji>
+      <Namestaj>
+        <akcija>0</akcija>
+        <Id>1</Id>
+        <Naziv>Francuski krevet</Naziv>
+        <JedinicnaCena>20000</JedinicnaCena>
+        <Kolicina>22</Kolicina>
+        <Obrisan>false</Obrisan>
+        <TipNID>1</TipNID>
+      </Namestaj>
+      <Namestaj>
+        <akcija>0</akcija>
+        <Id>3</Id>
+        <Naziv>Bastenski sto</Naziv>
+        <JedinicnaCena>750</JedinicnaCena>
+        <Kolicina>9</Kolicina>
+        <Obrisan>false</Obrisan>
+        <TipNID>2</TipNID>
+      </Namestaj>
+    </NamestajNaAkciji>
   </Akcija>
 </ArrayOfAkcija>

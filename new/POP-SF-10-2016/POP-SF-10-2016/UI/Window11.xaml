@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_10_2016.UI"
         mc:Ignorable="d"
-        Title="Window11" Height="387" Width="300">
+        Title="Glavni Meni" Height="387" Width="300">
     <Grid Margin="0,0,0,29">
         <Button Name="btnNamestaj" Content="Namestaj" Click="btnNamestaj_Click"  HorizontalAlignment="Left" Height="33" Margin="37,22,0,0" VerticalAlignment="Top" Width="220"/>
         <Button Name="btnKorisnici" Content="Korisnici" Click="btnKorisnici_Click" HorizontalAlignment="Left" Height="33" Margin="37,73,0,0" VerticalAlignment="Top" Width="220"/>

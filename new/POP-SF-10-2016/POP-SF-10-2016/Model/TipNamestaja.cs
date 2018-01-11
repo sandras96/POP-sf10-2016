@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -64,7 +65,7 @@ namespace POP_10.Model
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        
         #region Database
         public static ObservableCollection<TipNamestaja> GetAll()
         {
@@ -73,8 +74,9 @@ namespace POP_10.Model
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["POP"].ConnectionString))
             {
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT * FROM TipNamestaja WHERE Obrisan=@Obrisan";
+                cmd.CommandText = "SELECT * FROM TipNamestaja";
 
+                
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter();
 
@@ -103,11 +105,11 @@ namespace POP_10.Model
                 con.Open();
 
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "$INSERT INTO TipNamestaja (Naziv,Obrisan) VALUES (@Naziv, @Obrisan);";
+                cmd.CommandText = "INSERT INTO TipNamestaja (Naziv,Obrisan) VALUES (@Naziv, @Obrisan);";
                 cmd.CommandText += "SELECT SCOPE_IDENTITY();";
 
-                cmd.Paramteres.AddWithValue("Naziv", tn.Naziv);
-                cmd.Paramteres.AddWithValue("Naziv", tn.Obrisan);
+                cmd.Parameters.AddWithValue("Naziv", tn.Naziv);
+                cmd.Parameters.AddWithValue("Obrisan", tn.Obrisan);
 
                 int newId = int.Parse(cmd.ExecuteScalar().ToString()); //ExecuteScalar izvrsava query
                 tn.Id = newId;
@@ -126,7 +128,7 @@ namespace POP_10.Model
                 cmd.CommandText = "UPDATE TipNamestaja SET Naziv = @Naziv, Obrisan = @Obrisan WHERE Id =@Id";
                 cmd.Parameters.AddWithValue("Id", tn.Id);
                 cmd.Parameters.AddWithValue("Naziv", tn.Naziv);
-                cmd.Parameters.AddWithValue("Obrisan", tn.Obrisan;
+                cmd.Parameters.AddWithValue("Obrisan", tn.Obrisan);
 
                 cmd.ExecuteNonQuery(); //azuriranje stanje modela
 
@@ -150,7 +152,9 @@ namespace POP_10.Model
             Update(tn);
         }
         #endregion
+        
+    }
+    
+
     }
 
-
-}
